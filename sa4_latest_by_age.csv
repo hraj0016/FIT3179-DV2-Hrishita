@@ -1,0 +1,523 @@
+sa4_code,sa4_name,state,age_group,unemployment_rate,employed_000,unemployed_000
+101,Capital Region,New South Wales,15-24,7.36,19.3,1.5
+101,Capital Region,New South Wales,25-34,2.95,21.9,0.7
+101,Capital Region,New South Wales,35-44,2.26,26.0,0.6
+101,Capital Region,New South Wales,45-54,1.86,24.0,0.5
+101,Capital Region,New South Wales,55-64,2.32,22.4,0.5
+101,Capital Region,New South Wales,65+,1.19,10.4,0.1
+102,Central Coast,New South Wales,15-24,11.2,27.5,3.5
+102,Central Coast,New South Wales,25-34,3.5,31.9,1.2
+102,Central Coast,New South Wales,35-44,3.51,36.9,1.3
+102,Central Coast,New South Wales,45-54,2.67,36.8,1.0
+102,Central Coast,New South Wales,55-64,2.87,30.0,0.9
+102,Central Coast,New South Wales,65+,2.38,9.7,0.2
+103,New South Wales - Central West,New South Wales,15-24,7.87,19.9,1.7
+103,New South Wales - Central West,New South Wales,25-34,4.24,20.3,0.9
+103,New South Wales - Central West,New South Wales,35-44,2.94,23.0,0.7
+103,New South Wales - Central West,New South Wales,45-54,1.87,21.2,0.4
+103,New South Wales - Central West,New South Wales,55-64,2.31,19.3,0.5
+103,New South Wales - Central West,New South Wales,65+,0.86,12.0,0.1
+104,Coffs Harbour - Grafton,New South Wales,15-24,10.52,10.3,1.2
+104,Coffs Harbour - Grafton,New South Wales,25-34,4.65,10.8,0.5
+104,Coffs Harbour - Grafton,New South Wales,35-44,3.75,14.4,0.6
+104,Coffs Harbour - Grafton,New South Wales,45-54,3.03,13.8,0.4
+104,Coffs Harbour - Grafton,New South Wales,55-64,3.8,11.9,0.5
+104,Coffs Harbour - Grafton,New South Wales,65+,1.89,4.9,0.1
+105,Far West and Orana,New South Wales,15-24,9.77,8.6,0.9
+105,Far West and Orana,New South Wales,25-34,3.32,11.4,0.4
+105,Far West and Orana,New South Wales,35-44,3.26,11.4,0.4
+105,Far West and Orana,New South Wales,45-54,2.75,9.3,0.3
+105,Far West and Orana,New South Wales,55-64,3.01,9.2,0.3
+105,Far West and Orana,New South Wales,65+,1.17,5.6,0.1
+106,Hunter Valley exc Newcastle,New South Wales,15-24,10.31,25.4,2.9
+106,Hunter Valley exc Newcastle,New South Wales,25-34,4.19,31.5,1.4
+106,Hunter Valley exc Newcastle,New South Wales,35-44,3.09,33.3,1.1
+106,Hunter Valley exc Newcastle,New South Wales,45-54,2.62,28.7,0.8
+106,Hunter Valley exc Newcastle,New South Wales,55-64,3.5,23.0,0.8
+106,Hunter Valley exc Newcastle,New South Wales,65+,1.38,9.5,0.1
+107,Illawarra,New South Wales,15-24,10.66,30.5,3.6
+107,Illawarra,New South Wales,25-34,4.25,37.5,1.7
+107,Illawarra,New South Wales,35-44,2.94,37.3,1.1
+107,Illawarra,New South Wales,45-54,1.97,33.1,0.7
+107,Illawarra,New South Wales,55-64,3.86,23.8,1.0
+107,Illawarra,New South Wales,65+,1.6,7.5,0.1
+108,Mid North Coast,New South Wales,15-24,9.31,16.8,1.7
+108,Mid North Coast,New South Wales,25-34,4.02,15.4,0.6
+108,Mid North Coast,New South Wales,35-44,2.46,19.8,0.5
+108,Mid North Coast,New South Wales,45-54,3.12,19.8,0.6
+108,Mid North Coast,New South Wales,55-64,3.23,19.8,0.7
+108,Mid North Coast,New South Wales,65+,1.8,8.8,0.2
+109,Murray,New South Wales,15-24,8.19,10.3,0.9
+109,Murray,New South Wales,25-34,3.9,12.7,0.5
+109,Murray,New South Wales,35-44,3.24,12.9,0.4
+109,Murray,New South Wales,45-54,2.62,12.7,0.3
+109,Murray,New South Wales,55-64,3.66,11.3,0.4
+109,Murray,New South Wales,65+,1.18,6.2,0.1
+110,New England and North West,New South Wales,15-24,10.34,16.0,1.8
+110,New England and North West,New South Wales,25-34,4.37,19.0,0.9
+110,New England and North West,New South Wales,35-44,3.21,19.0,0.6
+110,New England and North West,New South Wales,45-54,2.26,17.5,0.4
+110,New England and North West,New South Wales,55-64,3.79,17.0,0.7
+110,New England and North West,New South Wales,65+,1.8,10.1,0.2
+111,Newcastle and Lake Macquarie,New South Wales,15-24,9.29,37.9,3.9
+111,Newcastle and Lake Macquarie,New South Wales,25-34,3.81,51.0,2.0
+111,Newcastle and Lake Macquarie,New South Wales,35-44,2.39,50.2,1.2
+111,Newcastle and Lake Macquarie,New South Wales,45-54,2.64,41.5,1.1
+111,Newcastle and Lake Macquarie,New South Wales,55-64,3.85,31.0,1.2
+111,Newcastle and Lake Macquarie,New South Wales,65+,1.35,10.2,0.1
+112,Richmond - Tweed,New South Wales,15-24,8.36,20.0,1.8
+112,Richmond - Tweed,New South Wales,25-34,3.89,20.8,0.8
+112,Richmond - Tweed,New South Wales,35-44,2.68,28.3,0.8
+112,Richmond - Tweed,New South Wales,45-54,2.59,27.9,0.7
+112,Richmond - Tweed,New South Wales,55-64,3.39,23.6,0.8
+112,Richmond - Tweed,New South Wales,65+,1.3,10.2,0.1
+113,Riverina,New South Wales,15-24,8.13,13.6,1.2
+113,Riverina,New South Wales,25-34,3.87,16.7,0.7
+113,Riverina,New South Wales,35-44,3.02,16.2,0.5
+113,Riverina,New South Wales,45-54,2.14,15.2,0.3
+113,Riverina,New South Wales,55-64,2.56,13.7,0.4
+113,Riverina,New South Wales,65+,0.77,8.8,0.1
+114,Southern Highlands and Shoalhaven,New South Wales,15-24,9.02,11.3,1.1
+114,Southern Highlands and Shoalhaven,New South Wales,25-34,3.43,11.9,0.4
+114,Southern Highlands and Shoalhaven,New South Wales,35-44,2.39,15.1,0.4
+114,Southern Highlands and Shoalhaven,New South Wales,45-54,2.29,14.4,0.3
+114,Southern Highlands and Shoalhaven,New South Wales,55-64,2.62,13.4,0.4
+114,Southern Highlands and Shoalhaven,New South Wales,65+,1.55,7.3,0.1
+115,Sydney - Baulkham Hills and Hawkesbury,New South Wales,15-24,9.23,25.9,2.6
+115,Sydney - Baulkham Hills and Hawkesbury,New South Wales,25-34,3.56,25.2,0.9
+115,Sydney - Baulkham Hills and Hawkesbury,New South Wales,35-44,2.24,40.2,0.9
+115,Sydney - Baulkham Hills and Hawkesbury,New South Wales,45-54,2.35,37.1,0.9
+115,Sydney - Baulkham Hills and Hawkesbury,New South Wales,55-64,2.71,24.4,0.7
+115,Sydney - Baulkham Hills and Hawkesbury,New South Wales,65+,1.4,10.6,0.2
+116,Sydney - Blacktown,New South Wales,15-24,12.23,35.9,5.0
+116,Sydney - Blacktown,New South Wales,25-34,4.47,55.0,2.6
+116,Sydney - Blacktown,New South Wales,35-44,3.25,70.9,2.4
+116,Sydney - Blacktown,New South Wales,45-54,3.15,50.3,1.6
+116,Sydney - Blacktown,New South Wales,55-64,3.78,28.3,1.1
+116,Sydney - Blacktown,New South Wales,65+,2.93,8.9,0.3
+117,Sydney - City and Inner South,New South Wales,15-24,9.94,29.0,3.2
+117,Sydney - City and Inner South,New South Wales,25-34,3.49,93.7,3.4
+117,Sydney - City and Inner South,New South Wales,35-44,3.23,57.2,1.9
+117,Sydney - City and Inner South,New South Wales,45-54,3.82,29.1,1.2
+117,Sydney - City and Inner South,New South Wales,55-64,5.25,18.7,1.0
+117,Sydney - City and Inner South,New South Wales,65+,3.23,6.8,0.2
+118,Sydney - Eastern Suburbs,New South Wales,15-24,7.54,22.9,1.9
+118,Sydney - Eastern Suburbs,New South Wales,25-34,1.88,56.0,1.1
+118,Sydney - Eastern Suburbs,New South Wales,35-44,2.17,36.4,0.8
+118,Sydney - Eastern Suburbs,New South Wales,45-54,2.07,27.0,0.6
+118,Sydney - Eastern Suburbs,New South Wales,55-64,2.15,20.0,0.4
+118,Sydney - Eastern Suburbs,New South Wales,65+,1.29,9.6,0.1
+119,Sydney - Inner South West,New South Wales,15-24,9.98,48.9,5.4
+119,Sydney - Inner South West,New South Wales,25-34,3.72,95.7,3.7
+119,Sydney - Inner South West,New South Wales,35-44,3.38,77.2,2.7
+119,Sydney - Inner South West,New South Wales,45-54,2.82,61.8,1.8
+119,Sydney - Inner South West,New South Wales,55-64,3.37,46.0,1.6
+119,Sydney - Inner South West,New South Wales,65+,2.14,13.4,0.3
+120,Sydney - Inner West,New South Wales,15-24,8.06,25.4,2.2
+120,Sydney - Inner West,New South Wales,25-34,2.9,58.2,1.7
+120,Sydney - Inner West,New South Wales,35-44,3.1,42.5,1.4
+120,Sydney - Inner West,New South Wales,45-54,2.52,32.4,0.8
+120,Sydney - Inner West,New South Wales,55-64,3.12,23.9,0.8
+120,Sydney - Inner West,New South Wales,65+,2.76,10.0,0.3
+121,Sydney - North Sydney and Hornsby,New South Wales,15-24,9.6,32.7,3.5
+121,Sydney - North Sydney and Hornsby,New South Wales,25-34,2.69,52.7,1.5
+121,Sydney - North Sydney and Hornsby,New South Wales,35-44,2.84,58.4,1.7
+121,Sydney - North Sydney and Hornsby,New South Wales,45-54,2.31,53.2,1.3
+121,Sydney - North Sydney and Hornsby,New South Wales,55-64,3.13,35.8,1.2
+121,Sydney - North Sydney and Hornsby,New South Wales,65+,2.05,18.4,0.4
+122,Sydney - Northern Beaches,New South Wales,15-24,6.82,23.8,1.7
+122,Sydney - Northern Beaches,New South Wales,25-34,1.56,29.7,0.5
+122,Sydney - Northern Beaches,New South Wales,35-44,2.04,30.3,0.6
+122,Sydney - Northern Beaches,New South Wales,45-54,1.72,34.3,0.6
+122,Sydney - Northern Beaches,New South Wales,55-64,1.91,26.2,0.5
+122,Sydney - Northern Beaches,New South Wales,65+,1.43,11.0,0.2
+123,Sydney - Outer South West,New South Wales,15-24,11.11,27.2,3.4
+123,Sydney - Outer South West,New South Wales,25-34,4.46,36.2,1.7
+123,Sydney - Outer South West,New South Wales,35-44,2.83,43.3,1.3
+123,Sydney - Outer South West,New South Wales,45-54,2.62,34.7,0.9
+123,Sydney - Outer South West,New South Wales,55-64,2.76,23.9,0.7
+123,Sydney - Outer South West,New South Wales,65+,1.23,8.1,0.1
+124,Sydney - Outer West and Blue Mountains,New South Wales,15-24,10.02,29.1,3.2
+124,Sydney - Outer West and Blue Mountains,New South Wales,25-34,3.95,41.4,1.7
+124,Sydney - Outer West and Blue Mountains,New South Wales,35-44,2.47,44.9,1.1
+124,Sydney - Outer West and Blue Mountains,New South Wales,45-54,2.35,38.0,0.9
+124,Sydney - Outer West and Blue Mountains,New South Wales,55-64,2.82,28.0,0.8
+124,Sydney - Outer West and Blue Mountains,New South Wales,65+,2.29,10.0,0.2
+125,Sydney - Parramatta,New South Wales,15-24,11.46,38.8,5.0
+125,Sydney - Parramatta,New South Wales,25-34,4.58,89.0,4.3
+125,Sydney - Parramatta,New South Wales,35-44,4.3,72.5,3.3
+125,Sydney - Parramatta,New South Wales,45-54,3.66,48.1,1.8
+125,Sydney - Parramatta,New South Wales,55-64,4.67,32.3,1.6
+125,Sydney - Parramatta,New South Wales,65+,3.38,9.2,0.3
+126,Sydney - Ryde,New South Wales,15-24,9.47,17.7,1.9
+126,Sydney - Ryde,New South Wales,25-34,3.12,33.7,1.1
+126,Sydney - Ryde,New South Wales,35-44,2.7,31.6,0.9
+126,Sydney - Ryde,New South Wales,45-54,2.66,23.1,0.6
+126,Sydney - Ryde,New South Wales,55-64,3.1,14.9,0.5
+126,Sydney - Ryde,New South Wales,65+,2.38,6.6,0.2
+127,Sydney - South West,New South Wales,15-24,12.11,40.4,5.6
+127,Sydney - South West,New South Wales,25-34,4.95,60.6,3.2
+127,Sydney - South West,New South Wales,35-44,3.9,62.4,2.5
+127,Sydney - South West,New South Wales,45-54,4.06,47.9,2.0
+127,Sydney - South West,New South Wales,55-64,4.25,34.1,1.5
+127,Sydney - South West,New South Wales,65+,3.75,9.3,0.4
+128,Sydney - Sutherland,New South Wales,15-24,5.12,21.7,1.2
+128,Sydney - Sutherland,New South Wales,25-34,1.68,26.2,0.4
+128,Sydney - Sutherland,New South Wales,35-44,1.64,28.7,0.5
+128,Sydney - Sutherland,New South Wales,45-54,1.64,29.6,0.5
+128,Sydney - Sutherland,New South Wales,55-64,1.83,21.9,0.4
+128,Sydney - Sutherland,New South Wales,65+,1.58,8.9,0.1
+201,Ballarat,Victoria,15-24,9.88,14.2,1.6
+201,Ballarat,Victoria,25-34,3.82,17.8,0.7
+201,Ballarat,Victoria,35-44,2.41,19.7,0.5
+201,Ballarat,Victoria,45-54,2.12,18.7,0.4
+201,Ballarat,Victoria,55-64,3.11,14.6,0.5
+201,Ballarat,Victoria,65+,1.98,6.8,0.1
+202,Bendigo,Victoria,15-24,8.9,12.5,1.2
+202,Bendigo,Victoria,25-34,3.39,15.4,0.5
+202,Bendigo,Victoria,35-44,2.39,18.5,0.5
+202,Bendigo,Victoria,45-54,1.79,18.0,0.3
+202,Bendigo,Victoria,55-64,2.55,15.2,0.4
+202,Bendigo,Victoria,65+,2.56,6.2,0.2
+203,Geelong,Victoria,15-24,9.71,26.2,2.8
+203,Geelong,Victoria,25-34,3.46,38.1,1.4
+203,Geelong,Victoria,35-44,2.58,44.1,1.2
+203,Geelong,Victoria,45-54,2.27,37.4,0.9
+203,Geelong,Victoria,55-64,2.67,27.8,0.8
+203,Geelong,Victoria,65+,2.68,11.6,0.3
+204,Hume,Victoria,15-24,8.53,14.5,1.3
+204,Hume,Victoria,25-34,3.09,15.2,0.5
+204,Hume,Victoria,35-44,1.94,19.0,0.4
+204,Hume,Victoria,45-54,1.91,20.0,0.4
+204,Hume,Victoria,55-64,2.61,18.1,0.5
+204,Hume,Victoria,65+,2.08,9.5,0.2
+205,Latrobe - Gippsland,Victoria,15-24,10.44,20.7,2.4
+205,Latrobe - Gippsland,Victoria,25-34,3.86,25.4,1.0
+205,Latrobe - Gippsland,Victoria,35-44,2.12,31.6,0.7
+205,Latrobe - Gippsland,Victoria,45-54,2.68,29.1,0.8
+205,Latrobe - Gippsland,Victoria,55-64,3.96,26.6,1.1
+205,Latrobe - Gippsland,Victoria,65+,2.81,13.6,0.4
+206,Melbourne - Inner,Victoria,15-24,12.77,58.9,8.6
+206,Melbourne - Inner,Victoria,25-34,3.86,187.8,7.5
+206,Melbourne - Inner,Victoria,35-44,2.96,108.4,3.3
+206,Melbourne - Inner,Victoria,45-54,3.89,61.9,2.5
+206,Melbourne - Inner,Victoria,55-64,3.67,42.9,1.6
+206,Melbourne - Inner,Victoria,65+,2.77,17.0,0.5
+207,Melbourne - Inner East,Victoria,15-24,11.37,33.1,4.3
+207,Melbourne - Inner East,Victoria,25-34,3.34,53.2,1.8
+207,Melbourne - Inner East,Victoria,35-44,2.3,47.3,1.1
+207,Melbourne - Inner East,Victoria,45-54,2.55,43.8,1.1
+207,Melbourne - Inner East,Victoria,55-64,3.03,34.2,1.1
+207,Melbourne - Inner East,Victoria,65+,2.8,15.0,0.4
+208,Melbourne - Inner South,Victoria,15-24,11.71,34.7,4.6
+208,Melbourne - Inner South,Victoria,25-34,3.05,53.9,1.7
+208,Melbourne - Inner South,Victoria,35-44,2.3,55.5,1.3
+208,Melbourne - Inner South,Victoria,45-54,2.91,53.9,1.6
+208,Melbourne - Inner South,Victoria,55-64,2.54,41.1,1.1
+208,Melbourne - Inner South,Victoria,65+,2.55,17.0,0.4
+209,Melbourne - North East,Victoria,15-24,13.13,45.0,6.8
+209,Melbourne - North East,Victoria,25-34,4.22,75.9,3.3
+209,Melbourne - North East,Victoria,35-44,3.03,84.2,2.6
+209,Melbourne - North East,Victoria,45-54,3.26,63.5,2.1
+209,Melbourne - North East,Victoria,55-64,2.81,44.3,1.3
+209,Melbourne - North East,Victoria,65+,2.86,14.1,0.4
+210,Melbourne - North West,Victoria,15-24,14.28,33.2,5.5
+210,Melbourne - North West,Victoria,25-34,4.46,57.6,2.7
+210,Melbourne - North West,Victoria,35-44,3.68,62.6,2.4
+210,Melbourne - North West,Victoria,45-54,3.92,44.4,1.8
+210,Melbourne - North West,Victoria,55-64,3.78,31.9,1.3
+210,Melbourne - North West,Victoria,65+,2.66,8.8,0.2
+211,Melbourne - Outer East,Victoria,15-24,11.25,40.4,5.1
+211,Melbourne - Outer East,Victoria,25-34,3.33,53.4,1.8
+211,Melbourne - Outer East,Victoria,35-44,2.02,66.7,1.4
+211,Melbourne - Outer East,Victoria,45-54,2.35,61.2,1.5
+211,Melbourne - Outer East,Victoria,55-64,2.79,47.0,1.4
+211,Melbourne - Outer East,Victoria,65+,2.41,18.5,0.5
+212,Melbourne - South East,Victoria,15-24,15.7,75.2,14.0
+212,Melbourne - South East,Victoria,25-34,5.17,125.6,6.8
+212,Melbourne - South East,Victoria,35-44,4.12,129.0,5.5
+212,Melbourne - South East,Victoria,45-54,4.11,94.6,4.1
+212,Melbourne - South East,Victoria,55-64,4.31,63.3,2.8
+212,Melbourne - South East,Victoria,65+,3.46,21.3,0.8
+213,Melbourne - West,Victoria,15-24,16.63,68.2,13.6
+213,Melbourne - West,Victoria,25-34,5.63,130.5,7.8
+213,Melbourne - West,Victoria,35-44,4.24,155.1,6.9
+213,Melbourne - West,Victoria,45-54,4.27,102.1,4.5
+213,Melbourne - West,Victoria,55-64,5.02,58.2,3.1
+213,Melbourne - West,Victoria,65+,3.29,14.5,0.5
+214,Mornington Peninsula,Victoria,15-24,11.56,23.2,3.0
+214,Mornington Peninsula,Victoria,25-34,2.9,27.6,0.8
+214,Mornington Peninsula,Victoria,35-44,2.63,34.6,0.9
+214,Mornington Peninsula,Victoria,45-54,3.12,35.0,1.1
+214,Mornington Peninsula,Victoria,55-64,2.42,29.2,0.7
+214,Mornington Peninsula,Victoria,65+,3.17,10.7,0.4
+215,Victoria - North West,Victoria,15-24,9.05,10.6,1.1
+215,Victoria - North West,Victoria,25-34,3.6,14.2,0.5
+215,Victoria - North West,Victoria,35-44,2.47,15.2,0.4
+215,Victoria - North West,Victoria,45-54,1.74,14.0,0.2
+215,Victoria - North West,Victoria,55-64,2.72,14.4,0.4
+215,Victoria - North West,Victoria,65+,1.93,7.3,0.1
+216,Shepparton,Victoria,15-24,9.84,9.6,1.1
+216,Shepparton,Victoria,25-34,3.95,11.6,0.5
+216,Shepparton,Victoria,35-44,2.87,13.7,0.4
+216,Shepparton,Victoria,45-54,2.09,13.1,0.3
+216,Shepparton,Victoria,55-64,3.13,11.9,0.4
+216,Shepparton,Victoria,65+,1.9,6.8,0.1
+217,Warrnambool and South West,Victoria,15-24,7.43,9.2,0.7
+217,Warrnambool and South West,Victoria,25-34,2.38,10.2,0.2
+217,Warrnambool and South West,Victoria,35-44,1.98,12.1,0.2
+217,Warrnambool and South West,Victoria,45-54,1.96,12.4,0.2
+217,Warrnambool and South West,Victoria,55-64,2.42,12.2,0.3
+217,Warrnambool and South West,Victoria,65+,1.71,8.7,0.2
+301,Brisbane - East,Queensland,15-24,10.49,23.4,2.7
+301,Brisbane - East,Queensland,25-34,3.53,23.9,0.9
+301,Brisbane - East,Queensland,35-44,2.13,32.1,0.7
+301,Brisbane - East,Queensland,45-54,2.32,32.1,0.8
+301,Brisbane - East,Queensland,55-64,2.16,24.7,0.5
+301,Brisbane - East,Queensland,65+,2.76,7.4,0.2
+302,Brisbane - North,Queensland,15-24,9.17,21.0,2.1
+302,Brisbane - North,Queensland,25-34,3.41,35.0,1.2
+302,Brisbane - North,Queensland,35-44,1.91,36.2,0.7
+302,Brisbane - North,Queensland,45-54,2.54,27.3,0.7
+302,Brisbane - North,Queensland,55-64,2.14,18.9,0.4
+302,Brisbane - North,Queensland,65+,2.03,5.0,0.1
+303,Brisbane - South,Queensland,15-24,9.62,35.8,3.8
+303,Brisbane - South,Queensland,25-34,3.72,65.2,2.5
+303,Brisbane - South,Queensland,35-44,2.56,58.0,1.5
+303,Brisbane - South,Queensland,45-54,2.8,41.0,1.2
+303,Brisbane - South,Queensland,55-64,2.59,26.5,0.7
+303,Brisbane - South,Queensland,65+,3.2,7.9,0.3
+304,Brisbane - West,Queensland,15-24,8.61,22.7,2.1
+304,Brisbane - West,Queensland,25-34,3.13,20.4,0.7
+304,Brisbane - West,Queensland,35-44,1.87,24.0,0.5
+304,Brisbane - West,Queensland,45-54,2.06,24.7,0.5
+304,Brisbane - West,Queensland,55-64,1.74,15.3,0.3
+304,Brisbane - West,Queensland,65+,1.5,6.3,0.1
+305,Brisbane Inner City,Queensland,15-24,7.6,38.2,3.1
+305,Brisbane Inner City,Queensland,25-34,3.06,78.0,2.5
+305,Brisbane Inner City,Queensland,35-44,2.79,45.4,1.3
+305,Brisbane Inner City,Queensland,45-54,2.75,33.3,0.9
+305,Brisbane Inner City,Queensland,55-64,2.23,24.1,0.5
+305,Brisbane Inner City,Queensland,65+,3.65,7.5,0.3
+306,Cairns,Queensland,15-24,11.61,21.1,2.8
+306,Cairns,Queensland,25-34,5.28,28.1,1.6
+306,Cairns,Queensland,35-44,3.53,31.3,1.1
+306,Cairns,Queensland,45-54,2.75,30.7,0.9
+306,Cairns,Queensland,55-64,4.1,25.1,1.1
+306,Cairns,Queensland,65+,3.41,9.8,0.3
+307,Darling Downs - Maranoa,Queensland,15-24,7.92,11.1,1.0
+307,Darling Downs - Maranoa,Queensland,25-34,3.55,12.2,0.4
+307,Darling Downs - Maranoa,Queensland,35-44,2.5,12.7,0.3
+307,Darling Downs - Maranoa,Queensland,45-54,2.41,13.0,0.3
+307,Darling Downs - Maranoa,Queensland,55-64,2.61,13.1,0.4
+307,Darling Downs - Maranoa,Queensland,65+,1.59,7.2,0.1
+308,Central Queensland,Queensland,15-24,9.76,21.8,2.4
+308,Central Queensland,Queensland,25-34,5.1,25.3,1.4
+308,Central Queensland,Queensland,35-44,3.21,29.3,1.0
+308,Central Queensland,Queensland,45-54,3.07,25.5,0.8
+308,Central Queensland,Queensland,55-64,3.53,21.4,0.8
+308,Central Queensland,Queensland,65+,3.95,8.2,0.3
+309,Gold Coast,Queensland,15-24,7.32,67.2,5.3
+309,Gold Coast,Queensland,25-34,2.87,89.7,2.7
+309,Gold Coast,Queensland,35-44,2.23,89.3,2.0
+309,Gold Coast,Queensland,45-54,2.32,78.1,1.9
+309,Gold Coast,Queensland,55-64,2.91,56.4,1.7
+309,Gold Coast,Queensland,65+,2.65,21.9,0.6
+310,Ipswich,Queensland,15-24,13.08,33.6,5.1
+310,Ipswich,Queensland,25-34,5.4,51.5,2.9
+310,Ipswich,Queensland,35-44,4.03,52.9,2.2
+310,Ipswich,Queensland,45-54,3.92,38.0,1.6
+310,Ipswich,Queensland,55-64,3.01,28.3,0.9
+310,Ipswich,Queensland,65+,2.35,7.4,0.2
+311,Logan - Beaudesert,Queensland,15-24,13.97,35.8,5.8
+311,Logan - Beaudesert,Queensland,25-34,5.71,51.5,3.1
+311,Logan - Beaudesert,Queensland,35-44,3.48,51.3,1.8
+311,Logan - Beaudesert,Queensland,45-54,3.4,38.7,1.4
+311,Logan - Beaudesert,Queensland,55-64,3.08,28.4,0.9
+311,Logan - Beaudesert,Queensland,65+,4.69,6.7,0.3
+312,Mackay - Isaac - Whitsunday,Queensland,15-24,6.05,18.3,1.2
+312,Mackay - Isaac - Whitsunday,Queensland,25-34,3.15,24.0,0.8
+312,Mackay - Isaac - Whitsunday,Queensland,35-44,2.07,24.0,0.5
+312,Mackay - Isaac - Whitsunday,Queensland,45-54,2.37,21.1,0.5
+312,Mackay - Isaac - Whitsunday,Queensland,55-64,2.55,18.3,0.5
+312,Mackay - Isaac - Whitsunday,Queensland,65+,2.32,5.4,0.1
+313,Moreton Bay - North,Queensland,15-24,12.53,22.3,3.2
+313,Moreton Bay - North,Queensland,25-34,4.6,29.5,1.4
+313,Moreton Bay - North,Queensland,35-44,3.41,30.3,1.1
+313,Moreton Bay - North,Queensland,45-54,3.78,27.2,1.1
+313,Moreton Bay - North,Queensland,55-64,3.42,22.1,0.8
+313,Moreton Bay - North,Queensland,65+,3.93,6.2,0.3
+314,Moreton Bay - South,Queensland,15-24,10.32,22.3,2.6
+314,Moreton Bay - South,Queensland,25-34,3.81,28.9,1.1
+314,Moreton Bay - South,Queensland,35-44,2.25,32.6,0.8
+314,Moreton Bay - South,Queensland,45-54,2.36,28.3,0.7
+314,Moreton Bay - South,Queensland,55-64,1.68,19.0,0.3
+314,Moreton Bay - South,Queensland,65+,3.46,4.5,0.2
+315,Queensland - Outback,Queensland,15-24,18.4,6.3,1.4
+315,Queensland - Outback,Queensland,25-34,5.55,9.4,0.6
+315,Queensland - Outback,Queensland,35-44,4.54,8.8,0.4
+315,Queensland - Outback,Queensland,45-54,5.09,6.8,0.4
+315,Queensland - Outback,Queensland,55-64,5.16,5.9,0.3
+315,Queensland - Outback,Queensland,65+,2.45,2.5,0.1
+316,Sunshine Coast,Queensland,15-24,7.26,39.3,3.1
+316,Sunshine Coast,Queensland,25-34,2.99,40.9,1.3
+316,Sunshine Coast,Queensland,35-44,1.99,49.6,1.0
+316,Sunshine Coast,Queensland,45-54,2.01,48.4,1.0
+316,Sunshine Coast,Queensland,55-64,2.59,36.6,1.0
+316,Sunshine Coast,Queensland,65+,2.33,13.6,0.3
+317,Toowoomba,Queensland,15-24,9.01,15.4,1.5
+317,Toowoomba,Queensland,25-34,3.32,19.8,0.7
+317,Toowoomba,Queensland,35-44,2.94,19.0,0.6
+317,Toowoomba,Queensland,45-54,2.39,15.7,0.4
+317,Toowoomba,Queensland,55-64,2.27,13.0,0.3
+317,Toowoomba,Queensland,65+,2.02,5.1,0.1
+318,Townsville,Queensland,15-24,11.34,24.1,3.1
+318,Townsville,Queensland,25-34,5.16,27.0,1.5
+318,Townsville,Queensland,35-44,3.52,25.9,0.9
+318,Townsville,Queensland,45-54,3.75,22.8,0.9
+318,Townsville,Queensland,55-64,4.3,19.9,0.9
+318,Townsville,Queensland,65+,2.59,7.4,0.2
+319,Wide Bay,Queensland,15-24,12.93,25.1,3.7
+319,Wide Bay,Queensland,25-34,5.74,25.4,1.5
+319,Wide Bay,Queensland,35-44,4.15,28.3,1.2
+319,Wide Bay,Queensland,45-54,3.3,29.9,1.0
+319,Wide Bay,Queensland,55-64,4.1,27.7,1.2
+319,Wide Bay,Queensland,65+,2.36,10.3,0.2
+401,Adelaide - Central and Hills,South Australia,15-24,7.56,29.7,2.4
+401,Adelaide - Central and Hills,South Australia,25-34,2.89,43.3,1.3
+401,Adelaide - Central and Hills,South Australia,35-44,1.81,40.4,0.7
+401,Adelaide - Central and Hills,South Australia,45-54,1.98,36.4,0.7
+401,Adelaide - Central and Hills,South Australia,55-64,2.12,28.8,0.6
+401,Adelaide - Central and Hills,South Australia,65+,1.78,13.5,0.2
+402,Adelaide - North,South Australia,15-24,13.33,36.4,5.6
+402,Adelaide - North,South Australia,25-34,5.67,61.1,3.7
+402,Adelaide - North,South Australia,35-44,4.16,58.8,2.6
+402,Adelaide - North,South Australia,45-54,3.94,44.0,1.8
+402,Adelaide - North,South Australia,55-64,3.05,34.3,1.1
+402,Adelaide - North,South Australia,65+,1.6,9.2,0.1
+403,Adelaide - South,South Australia,15-24,9.6,32.2,3.4
+403,Adelaide - South,South Australia,25-34,3.47,45.9,1.6
+403,Adelaide - South,South Australia,35-44,2.21,47.8,1.1
+403,Adelaide - South,South Australia,45-54,2.31,42.8,1.0
+403,Adelaide - South,South Australia,55-64,2.39,32.9,0.8
+403,Adelaide - South,South Australia,65+,2.08,11.9,0.3
+404,Adelaide - West,South Australia,15-24,7.94,19.7,1.7
+404,Adelaide - West,South Australia,25-34,3.64,39.4,1.5
+404,Adelaide - West,South Australia,35-44,2.32,34.1,0.8
+404,Adelaide - West,South Australia,45-54,2.45,25.9,0.6
+404,Adelaide - West,South Australia,55-64,2.43,20.8,0.5
+404,Adelaide - West,South Australia,65+,1.29,6.1,0.1
+405,Barossa - Yorke - Mid North,South Australia,15-24,8.91,8.6,0.8
+405,Barossa - Yorke - Mid North,South Australia,25-34,4.52,9.0,0.4
+405,Barossa - Yorke - Mid North,South Australia,35-44,2.96,10.9,0.3
+405,Barossa - Yorke - Mid North,South Australia,45-54,3.38,10.6,0.4
+405,Barossa - Yorke - Mid North,South Australia,55-64,3.53,11.7,0.4
+405,Barossa - Yorke - Mid North,South Australia,65+,2.49,5.1,0.1
+406,South Australia - Outback,South Australia,15-24,10.48,5.9,0.7
+406,South Australia - Outback,South Australia,25-34,5.49,8.1,0.5
+406,South Australia - Outback,South Australia,35-44,4.96,8.8,0.5
+406,South Australia - Outback,South Australia,45-54,5.08,7.1,0.4
+406,South Australia - Outback,South Australia,55-64,5.57,7.0,0.4
+406,South Australia - Outback,South Australia,65+,3.99,2.7,0.1
+407,South Australia - South East,South Australia,15-24,7.14,15.2,1.2
+407,South Australia - South East,South Australia,25-34,3.91,16.9,0.7
+407,South Australia - South East,South Australia,35-44,3.18,18.5,0.6
+407,South Australia - South East,South Australia,45-54,3.01,18.7,0.6
+407,South Australia - South East,South Australia,55-64,2.52,18.5,0.5
+407,South Australia - South East,South Australia,65+,1.41,9.8,0.1
+501,Bunbury,Western Australia,15-24,7.36,16.6,1.3
+501,Bunbury,Western Australia,25-34,3.96,19.0,0.8
+501,Bunbury,Western Australia,35-44,2.62,23.6,0.6
+501,Bunbury,Western Australia,45-54,2.19,24.0,0.5
+501,Bunbury,Western Australia,55-64,2.37,19.8,0.5
+501,Bunbury,Western Australia,65+,1.8,8.1,0.1
+502,Mandurah,Western Australia,15-24,10.72,9.8,1.2
+502,Mandurah,Western Australia,25-34,4.75,10.7,0.5
+502,Mandurah,Western Australia,35-44,4.16,11.4,0.5
+502,Mandurah,Western Australia,45-54,3.02,11.4,0.4
+502,Mandurah,Western Australia,55-64,4.48,9.4,0.4
+502,Mandurah,Western Australia,65+,2.32,3.3,0.1
+503,Perth - Inner,Western Australia,15-24,7.05,17.9,1.4
+503,Perth - Inner,Western Australia,25-34,2.56,39.3,1.0
+503,Perth - Inner,Western Australia,35-44,1.77,27.6,0.5
+503,Perth - Inner,Western Australia,45-54,2.17,20.4,0.5
+503,Perth - Inner,Western Australia,55-64,2.97,15.3,0.5
+503,Perth - Inner,Western Australia,65+,1.37,7.6,0.1
+504,Perth - North East,Western Australia,15-24,9.45,25.1,2.6
+504,Perth - North East,Western Australia,25-34,3.78,45.0,1.8
+504,Perth - North East,Western Australia,35-44,2.61,44.0,1.2
+504,Perth - North East,Western Australia,45-54,2.86,32.3,1.0
+504,Perth - North East,Western Australia,55-64,3.14,25.8,0.8
+504,Perth - North East,Western Australia,65+,1.55,8.2,0.1
+505,Perth - North West,Western Australia,15-24,10.25,54.5,6.2
+505,Perth - North West,Western Australia,25-34,3.38,85.8,3.0
+505,Perth - North West,Western Australia,35-44,2.5,87.7,2.2
+505,Perth - North West,Western Australia,45-54,2.84,71.0,2.1
+505,Perth - North West,Western Australia,55-64,3.1,52.4,1.7
+505,Perth - North West,Western Australia,65+,1.82,18.3,0.3
+506,Perth - South East,Western Australia,15-24,10.42,52.0,6.0
+506,Perth - South East,Western Australia,25-34,4.29,87.4,3.9
+506,Perth - South East,Western Australia,35-44,3.54,80.3,2.9
+506,Perth - South East,Western Australia,45-54,3.35,60.9,2.1
+506,Perth - South East,Western Australia,55-64,3.92,42.4,1.7
+506,Perth - South East,Western Australia,65+,2.1,16.1,0.3
+507,Perth - South West,Western Australia,15-24,10.39,44.0,5.1
+507,Perth - South West,Western Australia,25-34,4.32,66.1,3.0
+507,Perth - South West,Western Australia,35-44,2.59,66.5,1.8
+507,Perth - South West,Western Australia,45-54,2.84,54.2,1.6
+507,Perth - South West,Western Australia,55-64,3.22,41.0,1.4
+507,Perth - South West,Western Australia,65+,2.51,14.2,0.4
+508,Western Australia - Outback (North and South),Western Australia,15-24,9.05,16.0,1.6
+508,Western Australia - Outback (North and South),Western Australia,25-34,5.22,29.4,1.6
+508,Western Australia - Outback (North and South),Western Australia,35-44,4.19,28.3,1.2
+508,Western Australia - Outback (North and South),Western Australia,45-54,3.84,22.9,0.9
+508,Western Australia - Outback (North and South),Western Australia,55-64,4.18,17.7,0.8
+508,Western Australia - Outback (North and South),Western Australia,65+,3.55,5.8,0.2
+509,Western Australia - Wheat Belt,Western Australia,15-24,7.7,9.2,0.8
+509,Western Australia - Wheat Belt,Western Australia,25-34,3.48,12.9,0.5
+509,Western Australia - Wheat Belt,Western Australia,35-44,2.47,14.8,0.4
+509,Western Australia - Wheat Belt,Western Australia,45-54,2.49,14.9,0.4
+509,Western Australia - Wheat Belt,Western Australia,55-64,2.56,15.3,0.4
+509,Western Australia - Wheat Belt,Western Australia,65+,1.52,8.4,0.1
+601,Hobart,Tasmania,15-24,15.62,17.1,3.2
+601,Hobart,Tasmania,25-34,6.46,31.5,2.2
+601,Hobart,Tasmania,35-44,3.63,31.1,1.2
+601,Hobart,Tasmania,45-54,3.78,23.9,0.9
+601,Hobart,Tasmania,55-64,3.07,19.0,0.6
+601,Hobart,Tasmania,65+,2.6,7.3,0.2
+602,Launceston and North East,Tasmania,15-24,10.33,11.1,1.3
+602,Launceston and North East,Tasmania,25-34,5.7,15.9,1.0
+602,Launceston and North East,Tasmania,35-44,3.38,15.6,0.5
+602,Launceston and North East,Tasmania,45-54,3.48,15.0,0.5
+602,Launceston and North East,Tasmania,55-64,3.53,13.5,0.5
+602,Launceston and North East,Tasmania,65+,2.61,5.4,0.1
+603,Tasmania - South East,Tasmania,15-24,11.6,2.4,0.3
+603,Tasmania - South East,Tasmania,25-34,5.45,3.7,0.2
+603,Tasmania - South East,Tasmania,35-44,3.42,3.8,0.1
+603,Tasmania - South East,Tasmania,45-54,3.3,4.4,0.1
+603,Tasmania - South East,Tasmania,55-64,3.99,4.0,0.2
+603,Tasmania - South East,Tasmania,65+,2.62,1.9,0.1
+604,Tasmania - West and North West,Tasmania,15-24,10.64,8.8,1.0
+604,Tasmania - West and North West,Tasmania,25-34,5.31,10.9,0.6
+604,Tasmania - West and North West,Tasmania,35-44,3.77,11.0,0.4
+604,Tasmania - West and North West,Tasmania,45-54,3.89,11.1,0.5
+604,Tasmania - West and North West,Tasmania,55-64,4.89,10.2,0.5
+604,Tasmania - West and North West,Tasmania,65+,2.2,3.8,0.1
+701,Darwin,Northern Territory,15-24,8.78,12.3,1.2
+701,Darwin,Northern Territory,25-34,3.22,23.5,0.8
+701,Darwin,Northern Territory,35-44,2.05,22.1,0.5
+701,Darwin,Northern Territory,45-54,2.68,16.2,0.4
+701,Darwin,Northern Territory,55-64,2.66,11.6,0.3
+701,Darwin,Northern Territory,65+,2.46,4.2,0.1
+702,Northern Territory - Outback,Northern Territory,15-24,12.8,8.4,1.2
+702,Northern Territory - Outback,Northern Territory,25-34,6.94,14.9,1.1
+702,Northern Territory - Outback,Northern Territory,35-44,4.99,12.5,0.7
+702,Northern Territory - Outback,Northern Territory,45-54,3.54,9.0,0.3
+702,Northern Territory - Outback,Northern Territory,55-64,3.25,7.0,0.2
+702,Northern Territory - Outback,Northern Territory,65+,4.02,2.4,0.1
+801,Australian Capital Territory,Australian Capital Territory,15-24,9.45,43.6,4.5
+801,Australian Capital Territory,Australian Capital Territory,25-34,2.85,70.5,2.1
+801,Australian Capital Territory,Australian Capital Territory,35-44,2.22,66.6,1.5
+801,Australian Capital Territory,Australian Capital Territory,45-54,1.89,50.8,1.0
+801,Australian Capital Territory,Australian Capital Territory,55-64,2.63,31.4,0.8
+801,Australian Capital Territory,Australian Capital Territory,65+,3.45,11.5,0.4
