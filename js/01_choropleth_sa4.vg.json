@@ -70,7 +70,7 @@
                     "title": "Unemployment rate (%)",
                     "scale": {
                         "domain": ["Under 3%", "3–4%", "4–5%", "5–6%", "6–7%", "7% or more"],
-                        "range": ["#ffffb2", "3fed976", "#feb24c", "#fd8d3c", "#f03b20", "#bd0026"]
+                        "range": ["#ffffb2", "#fed976", "#feb24c", "#fd8d3c", "#f03b20", "#bd0026"]
                     },
                     "legend": {
                         "orient": "bottom-left",
@@ -79,7 +79,7 @@
                         "symbolSize": 200,
                         "labelFontSize": 12,
                         "titleFontSize": 12,
-                        "columns": 
+                        "columns": 6
                     }
                 },
                 "tooltip": [
