@@ -13,5 +13,81 @@
             "type": "csv",
             "parse": {"sa4_code": "string", "year": "number", "unemployment_rate": "number"}
         }
-    }
+    }, 
+    "transform": [
+        {"filter": "indexof([2016, 2018, 2020, 2022, 2024, 2026], datum.year)>=0"}
+    ],
+    "facet": {
+        "field": "year",
+        "type": "ordinal",
+        "title": null,
+        "header": {"labelFontSize": 15, "labelFontWeight": "bold", "labelOrient": "top"}
+    },
+    "columns": 3,
+    "spec": {
+        "width": 240,
+        "height": 200,
+        "projection": {
+            "type": "conicEqualArea",
+            "rotate": [-134, 0, 0],
+            "parallels": [-18, -36]
+        },
+        "layer": [
+            {
+                "data": {
+                    "url": "https://raw.githubusercontent.com/hraj0016/fit3179-dv2-hrishita/main/data/sa4_boundaries.json",
+                    "format": {"type": "topojson", "feature": "ABS_SA4_2011"}
+                },
+                "mark": {"type": "geoshape", "fill": "#e9e9e9", "stroke": "#ffffff", "strokeWidth": 0.2}
+            },
+            {
+                "transform": [
+                    {
+                        "lookup": "sa4_code",
+                        "from": {
+                            "data": {
+                                "url": "https://raw.githubusercontent.com/hraj0016/fit3179-dv2-hrishita/main/data/sa4_boundaries.json",
+                                "format": {"type": "topojson", "feature": "ABS_SA4_2011"}
+                            },
+                            "key": "properties.SA4_CODE11"
+                        },
+                        "as": "geo"
+                    },
+                    {
+                        "calculate": "datum.unemployment_rate < 3 ? 'Under 3%' : datum.unemployment_rate < 4 ? '3–4%' : datum.unemployment_rate < 5 ? '4–5%' : datum.unemployment_rate < 6 ? '5–6%' : datum.unemployment_rate < 7 ? '6–7%' : '7% or more'",
+                        "as": "rate_band"
+                    }
+                ],
+                "mark": {"type": "geoshape", "stroke": "#ffffff", "strokeWidth": 0.2},
+                "encoding": {
+                    "shape": {"field": "geo", "type": "geojson"},
+                    "color": {
+                        "field": "rate_band",
+                        "type": "ordinal",
+                        "title": "Unemploymment rate",
+                        "scale": {
+                            "domain": ["Under 3%", "3–4%", "4–5%", "5–6%", "6–7%", "7% or more"],
+                            "range": ["#ffffb2", "#fed976", "#feb24c", "#fd8d3c", "#f03b20", "#bd0026"]
+                        },
+                        "legend": {
+                            "orient": "bottom",
+                            "direction": "horizontal",
+                            "symbolType": "square",
+                            "symbolSize": 200,
+                            "labelFontSize": 12,
+                            "titleFontSize": 12,
+                            "columns": 6
+                        }
+                    },
+                    "tooltip": [
+                        {"field": "sa4_name", "title": "Region"},
+                        {"field": "year", "title": "Year"},
+                        {"field": "unemployment_rate", "title": "Unemployment rate (%)", "format": ".1f"}
+
+                    ]
+                }
+            }
+        ]
+    },
+    "config": {"view": {"stroke": null}}
 }

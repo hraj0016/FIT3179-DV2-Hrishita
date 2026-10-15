@@ -55,21 +55,32 @@
                         "key": "properties.SA4_CODE11"
                     },
                     "as": "geo"
+                }, 
+                {
+                    "calculate": "datum.unemployment_rate < 3 ? 'Under 3%' : datum.unemployment_rate < 4 ? '3–4%' : datum.unemployment_rate < 5 ? '4–5%' : datum.unemployment_rate < 6 ? '5–6%' : datum.unemployment_rate < 7 ? '6–7%' : '7% or more'",
+                    "as": "rate_band"
                 }
             ],
             "mark": {"type": "geoshape", "stroke": "#ffffff", "strokeWidth": 0.3},
             "encoding": {
                 "shape": {"field": "geo", "type": "geojson"},
                 "color": {
-                    "field": "unemployment_rate",
-                    "type": "quantitative",
+                    "field": "rate_band",
+                    "type": "ordinal",
                     "title": "Unemployment rate (%)",
                     "scale": {
-                        "type": "threshold",
-                        "domain": [3, 4, 5, 6, 7],
+                        "domain": ["Under 3%", "3–4%", "4–5%", "5–6%", "6–7%", "7% or more"],
                         "range": ["#ffffb2", "3fed976", "#feb24c", "#fd8d3c", "#f03b20", "#bd0026"]
                     },
-                    "legend": {"orient": "bottom-left", "direction": "horizontal", "format": ".0f"}
+                    "legend": {
+                        "orient": "bottom-left",
+                        "direction": "horizontal",
+                        "symbolType": "square",
+                        "symbolSize": 200,
+                        "labelFontSize": 12,
+                        "titleFontSize": 12,
+                        "columns": 
+                    }
                 },
                 "tooltip": [
                     {"field": "sa4_name", "title": "Region"},
