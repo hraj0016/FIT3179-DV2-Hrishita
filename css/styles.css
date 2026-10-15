@@ -6,6 +6,7 @@ body {
     color: #222;
 }
 
-#choropleth_map {
+#choropleth_map,
+#small_multiples_map {
     margin: 24px 0;
 }
