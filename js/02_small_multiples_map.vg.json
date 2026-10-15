@@ -1,0 +1,17 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "How has the map changed since 2016?",
+        "subtitle": "Unemployment rate by region (SA4), July of every second year",
+        "anchor": "start",
+        "fontSize": 20,
+        "subtitleFontSize": 13
+    },
+    "data": {
+        "url": "https://raw.githubusercontent.com/hraj0016/fit3179-dv2-hrishita/main/data/sa4_timeseries.csv",
+        "format": {
+            "type": "csv",
+            "parse": {"sa4_code": "string", "year": "number", "unemployment_rate": "number"}
+        }
+    }
+}
