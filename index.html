@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Where is work hardest to find?</title>
+    <title>Australia Employment and Unemployment</title>
 
     <!--Vega, Vega-Lite and Vega-Embed -->
     <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
@@ -15,8 +15,49 @@
   </head>
 
   <body>
+    <header class="page-header">
+      <p Class="kicker">Australia employement and unemployment</p>
+      <h1>Who is finding work in Australia, and who is not?</h1>
+      <p class="intro">
+        A look at how jobs and unemployment differ across regions, states, genders and age groups, 
+        and how that picture has changed since 2016. All figures are from the Australia Bureau of 
+        Statistics Labour Force survey, up to July 2016.
+      </p>
+    </header>
+
+    <!--1. Where is work hardest to find?-->
     <div id="choropleth_map"></div>
-    <div id="small_multiples_map"></div>
+
+    <!--2. Where do the unemployment actually live?-->
+    <div id="state_closeups">
+      <h2>Where do the unemployment actually live?</h2>
+      <p class="chart-subtitle">
+        Number of people unemployed in each region (SA4), July 2026. Each state is zoomed to fill 
+        its own panel. Hover over a region for its name and numbers.
+      </p>
+      <div class="closeup-grid">
+        <div id="closeup_qld"></div>
+        <div id="closeup_nsw"></div>
+        <div id="closeup_vic"></div>
+        <div id="closeup_tas"></div>
+        <div id="closeup_sa"></div>
+        <div id="closeup_wa"></div>
+        <div id="closeup_nt"></div>
+
+        <div class="closeup-legend">
+          <strong>People unemployed</strong>
+          <span><i style="background:#eff3ff"></i>Under 3,000</span>
+          <span><i style="background:#c6dbef"></i>3,000-6,000</span>
+          <span><i style="background:#9ecae1"></i>6,000-10,000</span>
+          <span><i style="background:#6baed6"></i>10,000-15,000</span>
+          <span><i style="background:#3182bd"></i>15,000-25,000</span>
+          <span><i style="background:#08519c"></i>25,000 or more</span>
+        </div>
+      </div>
+    </div>
+
+    <!--3. Has the jobs picture improved since 2016?-->
+    <div id="small_multiples_map"
 
     <script type="text/javascript">
       vegaEmbed("#choropleth_map", "js/01_choropleth_sa4.vg.json").catch(console.error);

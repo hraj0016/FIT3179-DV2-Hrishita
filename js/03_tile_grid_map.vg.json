@@ -1,0 +1,156 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "Who finds work harder, women or men?",
+        "subtitle": "Women's unemployment rate minus men's, July 2016 (percentage points). One equal tile per state, laid out roughly like the map.",
+        "anchor": "start",
+        "fontSize": 20, 
+        "subtitleFontSize": 13
+    },
+    "width": 480,
+    "height": 360,
+    "data": {
+        "url": "https://raw.githubusercontent.com/hraj0016/fit3179-dv2-hrishita/main/data/state_sex_time.csv",
+        "format": {
+            "type": "csv",
+            "parse": {"value": "number"}
+        }
+    },
+    "transform": [
+        {
+            "filter": "datum.date == '2026-07-01' && datum.metric == 'Unemployment rate' && datum.state != 'Australia' && (datum.sex == 'Males' || datum.sex == 'Females')"
+        },
+        {"pivot": "sex", "value": "value", "groupby": ["state"]},
+        {"calculate": "datum.Females - datum.Males", "as": "gap"},
+        {
+            "lookup": "state",
+            "from": {
+                "data": {
+                    "values": [
+                        {"state": "Northern Territory", "abbr": "NT", "name": "Northern Territory", "col": 1, "row": 0},
+                        {"state": "Queensland", "abbr": "QLD", "name": "Queensland", "col": 2, "row": 0},
+                        {"state": "Western Australia", "abbr": "WA", "name": "Western Australia", "col": 0, "row": 1},
+                        {"state": "South Australia", "abbr": "SA", "name": "South Australia", "col": 1, "row": 1},
+                        {"state": "New South Wales", "abbr": "NSW", "name": "New South Wales", "col": 2, "row": 1},
+                        {"state": "Australian Capital Territory", "abbr": "ACT", "name": "Capital Territory", "col": 3, "row": 1},
+                        {"state": "Victoria", "abbr": "VIC", "name": "Victoria", "col": 2, "row": 2},
+                        {"state": "Tasmania", "abbr": "TAS", "name": "Tasmania", "col":2, "row": 3}
+                    ]
+                },
+                "key": "state",
+                "fields": ["abbr", "name", "col", "row"]
+            }
+        },
+        {
+            "calculate": "datum.gap <= -1 ? 'Men higher by 1+ pt' : datum.gap < -0.25 ? 'Men higher by 0.25–1 pt' : datum.gap <= 0.25 ? 'About equal' : datum.gap < 1 ? 'Women higher by 0.25–1 pt' : 'Women higher by 1+ pt'",
+            "as": "gap_band"
+        },
+        {"calculate": "(datum.gap > 0 ? '+' : '') + format(datum.gap, '.1f') + ' pts'", "as": "gap_label"},
+        {
+            "calculate": "'Women ' + format(datum.Females, '.1f') + '%  Men ' + format(datum.Males, '.1f') + '%'",
+            "as": "detail"
+        },
+        {"calculate": "datum.col + 1", "as": "col_end"},
+        {"calculate": "datum.row + 1", "as": "row_end"},
+        {"calculate": "datum.col + 0.5", "as": "col_mid"},
+        {"calculate": "datum.row + 0.5", "as": "row_mid"}
+    ],
+    "layer": [
+        {
+            "mark": {"type": "rect", "stroke": "#ffffff", "strokeWidth": 4},
+            "encoding": {
+                "color": {
+                    "field": "gap_band",
+                    "type": "ordinal",
+                    "title": "Gap in unemployment rate",
+                    "scale": {
+                        "domain": ["Men higher by 1+ pt", "Men higher by 0.25–1 pt", "About equal", "Women higher by 0.25–1 pt", "Women higher by 1+ pt"],
+                        "range": ["#01665e", "#80cdc1", "#f0f0f0", "#c2a5cf", "#762a83"]
+                    },
+                    "legend": {
+                        "orient": "bottom",
+                        "direction": "horizontal",
+                        "symbolType": "square",
+                        "symbolSize": 200,
+                        "labelFontSize": 12,
+                        "titleFontSize": 12,
+                        "columns": 2,
+                        "labelLimit": 260,
+                        "titleLimit": 300
+                    }
+                },
+                "tooltip": [
+                    {"field": "state", "title": "State"},
+                    {"field": "Females", "title": "Women (%)", "format": ".1f"},
+                    {"field": "Males", "title": "Men (%)", "format": ".1f"},
+                    {"field": "gap_label", "title": "Gap (women minus men)"}
+                ],
+                "x": {"type": "quantitative", "scale": {"domain": [0, 4]}, "axis": null, "field": "col"},
+                "x2": {"field": "col_end"},
+                "y": {"type": "quantitative", "scale": {"domain": [0, 4], "reverse": true}, "axis": null, "field": "row"},
+                "y2": {"field": "row_end"}
+            }
+        },
+        {
+            "mark": {"type": "text", "dy": -26, "fontSize": 15, "fontWeight": "bold"},
+            "encoding": {
+                "text": {"field": "abbr"},
+                "color": {
+                    "condition": {
+                        "test": "datum.gap_band == 'Men higher by 1+ pt' || datum.gap_band == 'Women higher by 1+ pt'",
+                        "value": "#ffffff"
+                    },
+                    "value": "#222222"
+                },
+                "x": {"type": "quantitative", "scale": {"domain": [0, 4]}, "axis": null, "field": "col_mid"},
+                "y": {"type": "quantitative", "scale": {"domain": [0, 4], "reverse": true}, "axis": null, "field": "row_mid"}
+            }
+        },
+        {
+            "mark": {"type": "text", "dy": -6, "fontSize": 15},
+            "encoding": {
+                "text": {"field": "gap_label"},
+                "color": {
+                    "condition": {
+                        "test": "datum.gap_band == 'Men higher by 1+ pt' || datum.gap_band == 'Women higher by 1+ pt'",
+                        "value": "#ffffff"
+                    },
+                    "value": "#222222"
+                },
+                "x": {"type": "quantitative", "scale": {"domain": [0, 4]}, "axis": null, "field": "col_mid"},
+                "y": {"type": "quantitative", "scale": {"domain": [0, 4], "reverse": true}, "axis": null, "field": "row_mid"}
+            }
+        },
+        {
+            "mark": {"type": "text", "dy": 13, "fontSize": 10},
+            "encoding": {
+                "text": {"field": "detail"},
+                "color": {
+                    "condition": {
+                        "test": "datum.gap_band == 'Men higher by 1+ pt' || datum.gap_band == 'Women higher by 1+ pt'",
+                        "value": "#ffffff"
+                    },
+                    "value": "#222222"
+                },
+                "x": {"type": "quantitative", "scale": {"domain": [0, 4]}, "axis": null, "field": "col_mid"},
+                "y": {"type": "quantitative", "scale": {"domain": [0, 4], "reverse": true}, "axis": null, "field": "row_mid"}
+            }
+        },
+        {
+            "mark": {"type": "text", "dy": 29, "fontSize": 10},
+            "encoding": {
+                "text": {"field": "name"},
+                "color": {
+                    "condition": {
+                        "test": "datum.gap_band == 'Men higher by 1+ pt' || datum.gap_band == 'Women higher by 1+ pt'",
+                        "value": "#ffffff"
+                    },
+                    "value": "#222222"
+                },
+                "x": {"type": "quantitative", "scale": {"domain": [0, 4]}, "axis": null, "field": "col_mid"},
+                "y": {"type": "quantitative", "scale": {"domain": [0, 4], "reverse": true}, "axis": null, "field": "row_mid"}
+            }
+        }
+    ],
+    "config": {"view": {"stroke": null}}
+}

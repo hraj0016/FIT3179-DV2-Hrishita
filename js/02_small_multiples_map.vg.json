@@ -1,21 +1,21 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": {
-        "text": "How has the map changed since 2016?",
-        "subtitle": "Unemployment rate by region (SA4), July of every second year",
+        "text": "Has the jobs picture improved since 2016?",
+        "subtitle": "Change in unemployment rate since July 2016, by region (SA4). Blue = fell, red = rose. pts = percentage points.",
         "anchor": "start",
-        "fontSize": 20,
+        "fontSize": 20, 
         "subtitleFontSize": 13
     },
     "data": {
         "url": "https://raw.githubusercontent.com/hraj0016/fit3179-dv2-hrishita/main/data/sa4_timeseries.csv",
         "format": {
             "type": "csv",
-            "parse": {"sa4_code": "string", "year": "number", "unemployment_rate": "number"}
+            "parse": {"sa4_code": "string", "year": "number", "unemployment_rate": "number", "change_vs_2016": "number"}
         }
-    }, 
+    },
     "transform": [
-        {"filter": "indexof([2016, 2018, 2020, 2022, 2024, 2026], datum.year)>=0"}
+        {"filter": "indexof([2018, 2020, 2022, 2024, 2026], datum.year) >= 0"}
     ],
     "facet": {
         "field": "year",
@@ -27,11 +27,7 @@
     "spec": {
         "width": 240,
         "height": 200,
-        "projection": {
-            "type": "conicEqualArea",
-            "rotate": [-134, 0, 0],
-            "parallels": [-18, -36]
-        },
+        "projection": {"type": "conicEqualArea", "rotate": [-134, 0, 0], "parallels": [-18, -36]},
         "layer": [
             {
                 "data": {
@@ -54,26 +50,26 @@
                         "as": "geo"
                     },
                     {
-                        "calculate": "datum.unemployment_rate < 3 ? 'Under 3%' : datum.unemployment_rate < 4 ? '3–4%' : datum.unemployment_rate < 5 ? '4–5%' : datum.unemployment_rate < 6 ? '5–6%' : datum.unemployment_rate < 7 ? '6–7%' : '7% or more'",
-                        "as": "rate_band"
+                        "calculate": "datum.change_vs_2016 < -2 ? 'Fell by 2+ pts' : datum.change_vs_2016 < -1 ? 'Fell by 1–2 pts' : datum.change_vs_2016 < 0 ? 'Fell by 0–1 pt' : datum.change_vs_2016 < 1 ? 'Rose by 0–1 pt' : datum.change_vs_2016 < 2 ? 'Rose by 1–2 pts' : 'Rose by 2+ pts'",
+                        "as": "change_band"
                     }
                 ],
                 "mark": {"type": "geoshape", "stroke": "#ffffff", "strokeWidth": 0.2},
                 "encoding": {
                     "shape": {"field": "geo", "type": "geojson"},
                     "color": {
-                        "field": "rate_band",
+                        "field": "change_band",
                         "type": "ordinal",
-                        "title": "Unemploymment rate",
+                        "title": "Change since 2016",
                         "scale": {
-                            "domain": ["Under 3%", "3–4%", "4–5%", "5–6%", "6–7%", "7% or more"],
-                            "range": ["#ffffb2", "#fed976", "#feb24c", "#fd8d3c", "#f03b20", "#bd0026"]
+                            "domain": ["Fell by 2+ pts", "Fell by 1–2 pts", "Fell by 0–1 pt", "Rose by 0–1 pt", "Rose by 1–2 pts", "Rose by 2+ pts"],
+                            "range": ["#2166ac", "#67a9cf", "#d1e5f0", "#fddbc7", "#ef8a62", "#b2182b"]
                         },
                         "legend": {
                             "orient": "bottom",
                             "direction": "horizontal",
                             "symbolType": "square",
-                            "symbolSize": 200,
+                            "symbolSize": 200, 
                             "labelFontSize": 12,
                             "titleFontSize": 12,
                             "columns": 6
@@ -82,8 +78,8 @@
                     "tooltip": [
                         {"field": "sa4_name", "title": "Region"},
                         {"field": "year", "title": "Year"},
-                        {"field": "unemployment_rate", "title": "Unemployment rate (%)", "format": ".1f"}
-
+                        {"field": "unemployement_rate", "title": "Unemployment rate (%)", "format": ".1f"},
+                        {"field": "change_vs_2016", "title": "Change since 2016 (pts)", "format": "+.1f"}
                     ]
                 }
             }
