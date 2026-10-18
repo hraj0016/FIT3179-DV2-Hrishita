@@ -1,0 +1,59 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Template for one state close-up",
+    "title": {"text": "STATE", "fontSize": 14, "anchor": "middle"},
+    "width": 190,
+    "height": 190,
+    "data": {
+        "url": "https://raw.githubusercontent.com/hraj0016/fit3179-dv2-hrishita/main/data/sa4_timeseries.csv",
+        "format": {
+            "type": "csv",
+            "parse": {"sa4_code": "string", "year": "number", "unemployment_rate": "number", "unemployed_000": "number"}
+        }
+    },
+    "projection": {
+        "type": "conicEqualArea",
+        "rotate": [-134, 0, 0],
+        "parallels": [-18, -36],
+        "center": [0, 0],
+        "scale": 500,
+        "translate": [95, 95]
+    },
+    "transform": [
+        {"filter": "datu.year == 2026 && indexof(['STATE'], datum.state)>=0"},
+        {
+            "lookup": "sa4_code",
+            "from": {
+                "data": {
+                    "url": "https://raw.githubusercontent.com/hraj0016/fit3179-dv2-hrishita/main/data/sa4_boundaries.json",
+                    "format": {"type": "topojson", "feature": "ABS_SA4_2011"}
+                },
+                "key": "properties.SA4_CODE11"
+            },
+            "as": "geo"
+        },
+        {
+            "calculate": "datum.unemployed_000 < 3 ? 'Under 3,000' : datum.unemployed_000 < 6 ? '3,000–6,000' : datum.unemployed_000 < 10 ? '6,000–10,000' : datum.unemployed_000 < 15 ? '10,000–15,000' : datum.unemployed_000 < 25 ? '15,000–25,000' : '25,000 or more'",
+            "as": "count_band"
+        }
+    ],
+    "mark": {"type": "geoshape", "stroke": "#ffffff", "strokeWidth": 0.5},
+    "encoding": {
+        "shape": {"field": "geo", "type": "geojson"},
+        "color": {
+            "field": "count_band",
+            "type": "ordinal",
+            "scale": {
+                "domain": ["Under 3,000", "3,000–6,000", "6,000–10,000", "10,000–15,000", "15,000–25,000", "25,000 or more"],
+                "range": ["#eff3ff", "#c6dbef", "#9ecae1", "#6baed6", "#3182bd", "#08519c"]
+            },
+            "legend": null
+        },
+        "tooltip": [
+            {"field": "sa4_name", "title": "Region"},
+            {"field": "unemployed_000", "title": "People unemployed ('000)", "format": ".1f"},
+            {"field": "unemployment_rate", "title": "Unemployment rate (%)", "format": ".1f"}
+        ]
+    },
+    "config": {"view": {"stroke": null}}
+}

@@ -31,7 +31,8 @@ body {
 /* Charts */
 #choropleth_map,
 #small_multiples_map,
-#tile_grid_map {
+#tile_grid_map,
+#state_closeups {
     margin: 24px 0;
 }
 
@@ -54,10 +55,10 @@ body {
 
 .closeup-legend {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 4px;
+    flex-wrap: wrap;
+    gap: 12px;
     font-size: 13px;
+    margin-top: 8 px;
 }
 
 .closeup-legend i {
