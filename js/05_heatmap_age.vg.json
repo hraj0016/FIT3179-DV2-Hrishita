@@ -1,0 +1,78 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "Which age groups find work hardest?",
+        "subtitle": "Unemployment rate by age group, July of each year, all genders",
+        "anchor": "start",
+        "fontSize": 20,
+        "subtitleFontSize": 13
+    },
+    "width": {"step": 50},
+    "height": {"step": 44},
+    "data": {
+        "url": "https://raw.githubusercontent.com/hraj0016/fit3179-dv2-hrishita/main/data/age_sex_time.csv",
+        "format": {
+            "type": "csv",
+            "parse": {"value": "number", "year": "number", "month": "number"}
+        }
+    },
+    "transform": [
+        {"filter": "datum.metric == 'Unemployment rate' && datum.sex == 'Persons' && datum.month == 7"},
+        {
+            "calculate": "datum.value < 3 ? 'Under 3%' : datum.value < 4 ? '3–4%' : datum.value < 5 ? '4–5%' : datum.value < 7 ? '5–7%' : datum.value < 10 ? '7–10%' : datum.value < 13 ? '10–13%' : '13% or more'",
+            "as": "rate_band"
+        }
+    ],
+    "encoding": {
+        "x": {
+            "field": "year",
+            "type": "ordinal",
+            "title": "Year (July)",
+            "axis": {"labelAngle": 0, "labelFontSize": 12, "titleFontSize": 12, "orient": "bottom", "domain": false, "ticks": false}
+        }, 
+        "y": {
+            "field": "age_group",
+            "type": "ordinal",
+            "title": "Age group (years)",
+            "sort": ["15-24", "25-34", "35-44", "45-54", "55-64", "65+", "All ages"],
+            "axis": {"labelFontSize": 12, "titleFontSize": 12, "domain": false, "ticks": false}
+        }
+    },
+    "layer": [
+        {
+            "mark": {"type": "rect", "stroke": "#ffffff", "strokeWidth": 2},
+            "encoding": {
+                "color": {
+                    "field": "rate_band",
+                    "type": "ordinal",
+                    "title": "Unemployment rate",
+                    "scale": {
+                        "domain": ["Under 3%", "3–4%", "4–5%", "5–7%", "7–10%", "10–13%", "13% or more"],
+                        "range": ["#ffffcc", "#ffeda0", "#fed976", "#feb24c", "#fd8d3c", "#e31a1c", "#800026"]
+                    },
+                    "legend": {
+                        "orient": "bottom", "direction": "horizontal", "symbolType": "square",
+                        "symbolSize": 200, "labelFontSize": 12, "titleFontSize": 12,
+                        "columns": 7, "labelLimit": 120
+                    }
+                },
+                "tooltip": [
+                    {"field": "age_group", "title": "Age group"},
+                    {"field": "year", "title": "Year (July)"},
+                    {"field": "value", "title": "Unemployment rate (%)", "format": ".1f"}
+                ]
+            }
+        },
+        {
+            "mark": {"type": "text", "fontSize": 12},
+            "encoding": {
+                "text": {"field": "value", "type": "quantitative", "format": ".1f"},
+                "color": {
+                    "condition": {"test": "datum.value >= 10", "value": "#ffffff"},
+                    "value": "#222222"
+                }
+            }
+        }
+    ],
+    "config": {"view": {"stroke": null}}
+}
