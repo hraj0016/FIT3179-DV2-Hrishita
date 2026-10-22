@@ -32,7 +32,8 @@ body {
 #choropleth_map,
 #small_multiples_map,
 #tile_grid_map,
-#heatmap_age
+#heatmap_age,
+#pyramid
 #state_closeups {
     margin: 24px 0;
 }

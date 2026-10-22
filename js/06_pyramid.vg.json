@@ -1,0 +1,51 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "Who are the unemployed?",
+        "subtitle": "People unemployed by age group and gender, July 6026 (thousands)",
+        "anchor": "start",
+        "fontSize": 20,
+        "subtitleFontSize": 13
+    },
+    "width": 640,
+    "height": {"step": 40},
+    "data": {
+        "url": "https://raw.githubusercontent.com/hraj0016/fit3179-dv2-hrishita/main/data/age_sex_time.csv",
+        "format": {"type": "csv", "parse": {"value": "number", "year": "number", "month": "number"}}
+    },
+    "transform": [
+        {"filter": "datum.metric == 'Unemployed total' && datum.year == 2026 && datum.month == 7 && (datum.sex == 'Males' || datum.sex == 'Females') && datum.age_group != 'All ages'"},
+        {"calculate": "datum.sex == 'Males' ? -datum.value", "as": "signed"},
+        {"calculate": "datum.sex == 'Males' ? 'Men' : 'Women'", "as": "gender"}
+    ],
+    "mark": {"type": "bar", "height": {"band": 0.8}},
+    "encoding": {
+        "y": {
+            "field": "age_group",
+            "type": "ordinal",
+            "title": "Age group (years)",
+            "sort": ["65+", "55-64", "45-54", "35-44", "25-34", "15-24"],
+            "axis": {"labelFontSize": 12, "titleFontSize": 12, "domain": false, "ticks": false, "offset": 6}
+        },
+        "x": {
+            "field": "signed",
+            "type": "quantitative",
+            "title": "People unemployed (thousands)",
+            "scale": {"domain": [-150, 150]},
+            "axis": {"labelExpr": "abs(datum.value)", "labelFontSize": 12, "titleFontSize": 12, "tickCount": 6, "grid": true}
+        },
+        "color": {
+            "field": "gender",
+            "type": "nominal",
+            "title": "Gender",
+            "scale": {"domain": ["Men", "Women"], "range": ["#01665e", "#762a83"]},
+            "legend": {"orient": "top", "direction": "horizontal", "symbolType": "square", "labelFontSize": 12, "titleFontSize": 12}
+        },
+        "tooltip": [
+            {"field": "age_group", "title": "Age group"},
+            {"field": "gender", "title": "Gender"},
+            {"field": "value", "title": "People unemployed ('000)", "format": ".1f"}
+        ] 
+    },
+    "config": {"view": {"stroke": null}}
+}
