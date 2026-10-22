@@ -164,6 +164,23 @@
         </p>
       </section>
 
+      <section class="story">
+        <p class="step">8 &middot; Ten years on</p>
+        <h2>Which states have come furthest in ten years?</h2>
+        <p class="lead">
+          Each line joins one state's unemployment rate in July 2016 (left) to its rate in July 2026 (right). A line
+          sloping down means unemployment fell. Blue lines fell, red lines rose, and the dashed grey line is Australia
+          as a whole. The steeper the line, the bigger the change. Hover over a line for the exact numbers.
+        </p>
+        <div id="slope_chart"></div>
+        <p class="takeaway">
+          <b>What it shows:</b> Most states have fallen a long way. South Australia (6.3% to 4.1%), Western Australia
+          (6.5% to 4.4%) and Queensland (6.0% to 4.2%) improved the most, each by about 2 percentage points or more.
+          Tasmania and Victoria barely moved, staying near 5%. The Northern Territory is the only place where
+          unemployment clearly rose, from 3.4% to 4.6%.
+        </p>
+      </section>
+
       <footer class="sources">
         <p><b>Data sources:</b> Australian Bureau of Statistics, <i>Labour Force, Australia</i> (modelled SA4 estimates
         and detailed age, gender and state tables), data to July 2026. Region boundaries: ABS SA4 boundaries (2011),
@@ -183,6 +200,7 @@
       vegaEmbed("#heatmap_age", "js/05_heatmap_age.vg.json");
       vegaEmbed("#pyramid", "js/06_pyramid.vg.json");
       vegaEmbed("#stream_graph", "js/07_stream.vg.json");
+      vegaEmbed("#slope_chart", "js/08_slope.vg.json");
       var closeups = [
         {id: "#closeup_qld", title: "Queensland", states: ["Queensland"], scale: 482, translate: [7.4, -67.6]},
         {id: "#closeup_nsw", title: "NSW and ACT", states: ["New South Wales", "Australian Capital Territory"], scale: 652.4, translate: [-57.7, -283.4]},

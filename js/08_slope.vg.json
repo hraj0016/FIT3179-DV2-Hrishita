@@ -1,0 +1,77 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "Which states have come furthest in ten years?",
+        "subtitle": "Unemployment rate by state and territory, July 2016 compared with July 2026",
+        "anchor": "start",
+        "fontSize": 20,
+        "subtitleFontSize": 13
+    },
+    "width": 600,
+    "height": 520,
+    "data": {
+        "url": "https://raw.githubusercontent.com/hraj0016/fit3179-dv2-hrishita/main/data/state_sex_time.csv",
+        "format": {"type": "csv", "parse": {"value": "number", "year": "number", "month": "number"}}
+    },
+    "transform": [
+        {"filter": "datum.metric == 'Unemployment rate' && datum.sex == 'Persons' && datum.month == 7 && (datum.year == 2016 || datum.year == 2026)"},
+        {"calculate": "datum.state == 'Australian Capital Territory' ? 'ACT' : datum.state", "as": "name"},
+        {"calculate": "datum.year == 2016 ? datum.value : null", "as": "v2016"},
+        {"calculate": "datum.year == 2026 ? datum.value : null", "as": "v2026"},
+        {
+            "joinaggregate": [
+                {"op": "max", "field": "v2016", "as": "rate_2016"},
+                {"op": "max", "field": "v2026", "as": "rate_2026"}
+            ],
+            "groupby": ["state"]
+        },
+        {"calculate": "datum.state == 'Australia' ? 'Australia overall' : datum.rate_2026 > datum.rate_2016 ? 'Rate rose' : 'Rate fell'", "as": "direction"},
+        {"calculate": "datum.rate_2026 - datum.rate_2016", "as": "change"},
+        {"calculate": "datum.year == 2016 ? ({'Queensland': 0.06, 'Tasmania': -0.05, 'Australia': -0.1, 'Australian Capital Territory': 0.04, 'Northern Territory': -0.04}[datum.state] || 0) : ({'Victoria': 0.04, 'Tasmania': -0.04, 'Australia': 0.04, 'New South Wales': 0.04, 'Queensland': -0.03, 'South Australia': -0.05}[datum.state] || 0)", "as": "nudge"},
+        {"calculate": "datum.value + datum.nudge", "as": "ylab"},
+        {"calculate": "datum.year == 2016 ? datum.name + '  ' + format(datum.value, '.1f') + '%' : format(datum.value, '.1f') + '%  ' + datum.name", "as": "label"} 
+    ],
+    "encoding": {
+        "x": {
+            "field": "year",
+            "type": "quantitative",
+            "title": null,
+            "scale": {"domain": [2011, 2031]},
+            "axis": {"values": [2016, 2026], "format": "d", "labelExpr": "'July ' + datum.value", "labelFontSize": 13, "labelFontWeight": "bold", "grid": false, "ticks": false, "domain": false, "orient": "top"}
+        },
+        "y": {"field": "value", "type": "quantitative", "title": null, "scale": {"domain": [3, 7]}, "axis": null},
+        "color": {
+            "field": "direction",
+            "type": "nominal",
+            "title": "Change, 2016 to 2026",
+            "scale": {"domain": ["Rate fell", "Rate rose", "Australia overall"], "range": ["#3182bd", "#bd0026", "#777777"]},
+            "legend": {"orient": "bottom", "direction": "horizontal", "symbolType": "stroke", "labelFontSize": 12, "titleFontSize": 12}
+        }
+    },
+    "layer": [
+        {
+            "mark": {"type": "line", "strokeWidth": 2.5, "point": {"filled": true, "size": 60}},
+            "encoding": {
+                "detail": {"field": "state", "type": "nominal"},
+                "strokeDash": {"condition": {"test": "datum.state == 'Australia'", "value": [5, 4]}, "value": [1, 0]},
+                "tooltip": [
+                    {"field": "state", "title": "State"},
+                    {"field": "rate_2016", "title": "July 2016 (%)", "format": ".1f"},
+                    {"field": "rate_2026", "title": "July 2026 (%)", "format": ".1f"},
+                    {"field": "change", "title": "Change (points)", "format": "+.1f"}
+                ]
+            }
+        },
+        {
+            "transform": [{"filter": "datum.year == 2016"}],
+            "mark": {"type": "text", "align": "right", "dx": -10, "fontSize": 12},
+            "encoding": {"y": {"field": "ylab", "type": "quantitative"}, "text": {"field": "label"}}
+        },
+        {
+            "transform": [{"filter": "datum.year == 2026"}],
+            "mark": {"type": "text", "align": "left", "dx": 10, "fontSize": 12},
+            "encoding": {"y": {"field": "ylab", "type": "quantitative"}, "text": {"field": "label"}}
+        }
+    ],
+    "config": {"view": {"stroke": null}}
+}

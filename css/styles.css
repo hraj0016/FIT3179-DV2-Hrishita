@@ -118,7 +118,8 @@ body {
 #tile_grid_map,
 #heatmap_age,
 #pyramid,
-#stream_graph {
+#stream_graph,
+#slope_chart {
     margin: 16px 0;
 }
 
