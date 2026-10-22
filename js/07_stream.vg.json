@@ -1,0 +1,64 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "How has the make-up of the unemployed changed?",
+        "subtitle": "People unemployed by age groups each month, January 2016 to July 2026. The wider the band, the more people.",
+        "anchor": "start",
+        "fontSize": 20,
+        "subtitleFontSize": 13
+    },
+    "width": 640,
+    "height": 300,
+    "data": {
+        "url": "https://raw.githubusercontent.com/hraj0016/fit3179-dv2-hrishita/main/data/age_sex_time.csv",
+        "format": {"type": "csv", "parse": {"value": "number", "date": "date: '%Y-%m-%d'"}}
+    },
+    "transform": [
+        {"filter": "datum.metric == 'Unemployed total' && datum.sex == 'Persons' && datum.age_group != 'All ages'"}
+    ],
+    "layer": [
+        {
+            "mark": {"type": "area", "interpolate": "monotone", "stroke": "#ffffff", "strokeWidth": 0.5},
+            "encoding": {
+                "x": {
+                    "field": "date",
+                    "type": "temporal",
+                    "title": null,
+                    "axis": {"format": "%Y", "tickCount": "year", "labelFontSize": 12, "grid": false, "domain": false}
+                },
+                "y": {"field": "value", "type": "quantitative", "stack": "center", "axis":null},
+                "color": {
+                    "field": "age_group",
+                    "type": "ordinal",
+                    "title": "Age group (years)",
+                    "scale": {
+                        "domain":["15-24", "25-34", "35-44", "45-54", "55-64", "65+"],
+                        "range": ["#bd0026", "#08519c", "#3182bd", "#6baed6", "#9ecae1", "#c6dbef"]
+                    },
+                    "legend": {"orient": "right", "symbolType": "square", "labelFontSize": 12, "titleFontSize": 12}
+                },
+                "order": {"field": "age_group", "type": "ordinal", "sort": "descending"},
+                "tooltip": [
+                    {"field": "date", "type": "temporal", "title": "Month", "format": "%b %Y"},
+                    {"field": "age_group", "title": "Age group"},
+                    {"field": "value", "title": "People unemployed ('000)", "format": ".0f"}
+                ]
+            }
+        },
+        {
+            "data": {"values": [{"date": "2020-04-01", "label": "COVID-19 (Apr 2020)"}]},
+            "mark": {"type": "rule", "strokeDash": [4, 3], "color": "#333333"},
+            "encoding": {"x": {"field": "date", "type": "temporal"}}
+        },
+        {
+            "data": {"values": [{"date": "2020-04-01", "label": "COVID-19 (apr 2020)"}]},
+            "mark": {"type": "text", "align": "left", "dx": 4, "dy": -6, "baseline": "bottom", "fontSize": 12, "fontWeight": "bold", "color": "#333333"},
+            "encoding": {
+                "x": {"field": "date", "type": "temporal"},
+                "y": {"value": 0},
+                "text": {"field": "label"}
+            }
+        }
+    ],
+    "config": {"view": {"stroke": null}}
+}

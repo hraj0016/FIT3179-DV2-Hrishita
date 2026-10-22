@@ -117,7 +117,8 @@ body {
 #small_multiples_map,
 #tile_grid_map,
 #heatmap_age,
-#pyramid {
+#pyramid,
+#stream_graph {
     margin: 16px 0;
 }
 

@@ -146,6 +146,24 @@
         </p>
       </section>
 
+      <section class="story">
+        <p class="step">7 &middot; Over time</p>
+        <h2>How has the make-up of the unemployed changed?</h2>
+        <p class="lead">
+          This stream graph shows the number of unemployed people every month from 2016 to 2026. Each coloured band
+          is an age group, and the band's width is how many people in that group are unemployed. The red band is
+          the youngest group (15&ndash;24). Hover over any band to see the month and the number of people.
+        </p>
+        <div id="stream_graph"></div>
+        <p class="takeaway">
+          <b>What it shows:</b> The whole stream swells when COVID-19 hit in 2020, from about 816,000 unemployed people
+          in January 2016 to a peak of about 982,000 in July 2020. It then narrows to about 681,000 by July 2026.
+          The red band stays at around 37% of the total throughout, so young people have been over a third of the
+          unemployed in almost every year. The thin 65+ band at the bottom is growing slowly, from about 6,000
+          people to about 23,000.
+        </p>
+      </section>
+
       <footer class="sources">
         <p><b>Data sources:</b> Australian Bureau of Statistics, <i>Labour Force, Australia</i> (modelled SA4 estimates
         and detailed age, gender and state tables), data to July 2026. Region boundaries: ABS SA4 boundaries (2011),
@@ -164,6 +182,7 @@
       vegaEmbed("#tile_grid_map", "js/03_tile_grid_map.vg.json").catch(console.error);
       vegaEmbed("#heatmap_age", "js/05_heatmap_age.vg.json");
       vegaEmbed("#pyramid", "js/06_pyramid.vg.json");
+      vegaEmbed("#stream_graph", "js/07_stream.vg.json");
       var closeups = [
         {id: "#closeup_qld", title: "Queensland", states: ["Queensland"], scale: 482, translate: [7.4, -67.6]},
         {id: "#closeup_nsw", title: "NSW and ACT", states: ["New South Wales", "Australian Capital Territory"], scale: 652.4, translate: [-57.7, -283.4]},
