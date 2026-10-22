@@ -11,7 +11,7 @@
     "height": 300,
     "data": {
         "url": "https://raw.githubusercontent.com/hraj0016/fit3179-dv2-hrishita/main/data/age_sex_time.csv",
-        "format": {"type": "csv", "parse": {"value": "number", "date": "date: '%Y-%m-%d'"}}
+        "format": {"type": "csv", "parse": {"value": "number", "date": "date:'%Y-%m-%d'"}}
     },
     "transform": [
         {"filter": "datum.metric == 'Unemployed total' && datum.sex == 'Persons' && datum.age_group != 'All ages'"}
