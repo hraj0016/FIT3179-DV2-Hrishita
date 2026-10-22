@@ -3,67 +3,167 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Australia Employment and Unemployment</title>
+    <title>Who is finding work in Australia?</title>
+    <link rel="stylesheet" href="css/styles.css">
 
     <!--Vega, Vega-Lite and Vega-Embed -->
     <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.5.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
-
-    <!-- CSS file -->
-    <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
   </head>
 
   <body>
-    <header class="page-header">
-      <p Class="kicker">Australia employement and unemployment</p>
-      <h1>Who is finding work in Australia, and who is not?</h1>
-      <p class="intro">
-        A look at how jobs and unemployment differ across regions, states, genders and age groups, 
-        and how that picture has changed since 2016. All figures are from the Australia Bureau of 
-        Statistics Labour Force survey, up to July 2016.
-      </p>
+    <header class="hero">
+      <div class="hero-inner">
+        <p class="kicker">Australian Employment and Unemployment &middot; 2016&ndash;2026</p>
+        <h1>Who is finding work in Australia, <span class="accent">and who is not?</span></h1>
+        <p class="hero-sub">
+          Australia's jobless rate has fallen from 5.6% to 4.4% in a decade. But that one number 
+          hides a lot: some places, ages and groups of workers are doing far better than others.
+          Scroll down to see where the gaps are.
+        </p>
+        <div class="stats">
+          <div class="stat"><b>4.4%</b><span>national unemployment rate, July 2026</span></div>
+          <div class="stat"><b>681,000</b><span>people unemployed, July 2026</span></div>
+          <div class="stat"><b>81 of 87</b><span>regions have a lower rate than in 2016</span></div>
+          <div class="stat"><b>10.1%</b><span>unemployment rate for 15&ndash;24 year olds</span></div>
+        </div>
+      </div>
     </header>
 
-    <!--1. Where is work hardest to find?-->
-    <div id="choropleth_map"></div>
+    <main class="page">
 
-    <!--2. State close-ups-->
-    <div id="state_closeups">
-      <h2>Where do the unemployed actually live?</h2>
-      <p class=""chart-subtitle">Number of people unemployed in each region, July 2026. Darker means more people, so big cities stand out.</p>
-      <div class="closeup-grid">
-        <div id="closeup_qld"></div>
-        <div id="closeup_nsw"></div>
-        <div id="closeup_vic"></div>
-        <div id="closeup_tas"></div>
-        <div id="closeup_sa"></div>
-        <div id="closeup_wa"></div>
-        <div id="closeup_nt"></div>
-      </div>
-      <div class="closeup-legend">
-        <span><i style="background:#eff3ff"></i>Under 3,000</span>
-        <span><i style="background:#c6dbef"></i>3,000-6,000</span>
-        <span><i style="background:#9ecae1"></i>6,000-10,000</span>
-        <span><i style="background:#6baed6"></i>10,000-15,000</span>
-        <span><i style="background:#3182bd"></i>15,000-25,000</span>
-        <span><i style="background:#08519c"></i>25,000 or more</span>
-      </div>
-    </div>
+      <section class="story">
+        <p class="step">1 &middot; Where</p>
+        <h2>Where is unemployment highest?</h2>
+        <p class="lead">
+          Australia is divided here into 87 regions (called SA4s by the Australian Bureau of Statistics).
+          Each region is coloured by its <b>unemployment rate</b>: the share of people who want to work
+          but cannot find a job. Pale yellow means few people are out of work and dark red means many.
+          Use the year buttons to move between 2016, 2021 and 2026, and hover over a region for its exact rate.
+        </p>
+        <div id="choropleth_map"></div>
+        <p class="takeaway">
+          <b>What it shows:</b> The map got paler between 2016 and 2026 almost everywhere. But in 2026 the rate
+          still ranges from 2.2% in Sydney &ndash; Sutherland to 7.3% in the Queensland Outback, so where you live
+          still matters a lot.
+        </p>
+      </section>
 
-    <!--3. Has the jobs picture improved since 2016?-->
-    <div id="small_multiples_map"></div>
+      <section class="story" id="state_closeups">
+        <p class="step">2 &middot; Where, up close</p>
+        <h2>Where do the unemploymed actually live?</h2>
+        <p class="lead">
+          A high rate in a huge outback region sounds alarming, but few people live there. These close-ups zoom in on
+          each state and colour regions by the <b>number of people</b> unemployed instead. Darker means more people,
+          so big cities stand out.
+        </p>
+        <div class="closeup-grid">
+          <div id="closeup_qld"></div>
+          <div id="closeup_nsw"></div>
+          <div id="closeup_vic"></div>
+          <div id="closeup_tas"></div>
+          <div id="closeup_sa"></div>
+          <div id="closeup_wa"></div>
+          <div id="closeup_nt"></div>
+        </div>
+        <div class="closeup-legend">
+          <span><i style="background:#eff3ff"></i>Under 3,000</span>
+          <span><i style="background:#c6dbef"></i>3,000&ndash;6,000</span>
+          <span><i style="background:#9ecae1"></i>6,000&ndash;10,000</span>
+          <span><i style="background:#6baed6"></i>10,000&ndash;15,000</span>
+          <span><i style="background:#3182bd"></i>15,000&ndash;25,000</span>
+          <span><i style="background:#08519c"></i>25,000 or more</span>
+        </div>
+        <p class="takeaway">
+          <b>What it shows:</b> The outback has the highest rates but the fewest people. The darkest regions are
+          in the cities. Melbourne &ndash; West alone has about 36,000 unemployed people, and the five biggest
+          regions together hold about one in five of all unemployed Australians.
+        </p>
+      </section>
 
-    <!-- 4. Who finds work harder, women or men? -->
-    <div id="tile_grid_map"></div>
+      <section class="story">
+        <p class="step">3 &middot; Change over time</p>
+        <h2>Has the jobs picture improved since 2016?</h2>
+        <p class="lead">
+          Each small map compares one year with <b>2016</b>. Blue regions have a <i>lower</i> unemployment rate than
+          in 2016 (good news) and red regions have a <i>higher</i> one. Read the maps from left to right to follow
+          the story from 2018 to 2026.
+        </p>
+        <div id="small_multiples_map"></div>
+        <p class="takeaway">
+          <b>What it shows:</b> The first two panels are mixed, and in 2020 the pandemic pushed many regions' rates above their 2016 level.
+          From 2022 blue takes over, and by 2026 81 of the 87 regions are better off than in 2016. Perth &ndash; South West and Wide Bay improved the most, each falling by about 3 percentage points.
+          The exceptions are Hobart, Darwin and the Northern Territory Outback, where rates have risen.
+        </p>
+      </section>
 
-    <div id="heatmap_age"></div>
+      <section class="story">
+        <p class="step">4 &middot; Gender</p>
+        <h2>Who finds work harder, women or men?</h2>
+        <p class="lead">
+          Each tile is one state or territory, placed roughly where it sits on the map so every state gets the same
+          space. The colour shows the <b>gap</b> between the women's and men's unemployment rates in July 2026.
+          Teal means the rate is higher for men, purple means it is higher for women, and grey means about equal.
+        </p>
+        <div id="tile_grid_map"></div>
+        <p class="takeaway">
+          <b>What it shows:</b> Nationally the two rates are almost identical (4.4% for women, 4.5% for men), but the
+          states are not. Tasmania has the biggest gap, with men's unemployment at 6.2% against 3.9% for women.
+          Western Australia is the reverse, with women at 5.0% and men at 3.8%.
+        </p>
+      </section>
 
-    <div id="pyramid"></div>
+      <section class="story">
+        <p class="step">5 &middot; Age</p>
+        <h2>Which age groups find work hardest?</h2>
+        <p class="lead">
+          Each row is an age group and each column is a year (every July). Each cell is coloured by the unemployment
+          rate, from pale yellow (low) to dark red (high), and the number inside is the exact rate. The bottom row
+          shows all ages together for comparison.
+        </p>
+        <div id="heatmap_age"></div>
+        <p class="takeaway">
+          <b>What it shows:</b> The top row is red in every year. Young people (15&ndash;24) were hit hardest in 2020,
+          when 15.9% were unemployed, and in 2026 the rate is still 10.1%, more than three times the rate for
+          people in their 30s, 40s and 50s. Older workers barely changed, even in 2020.
+        </p>
+      </section>
+
+
+      <section class="story">
+        <p class="step">6 &middot; Age and gender together</p>
+        <h2>Who are the unemployed?</h2>
+        <p class="lead">
+          This pyramid counts <b>people</b> rather than rates. Each bar is an age group, with men extending to the
+          left and women to the right. The longer the bar, the more people in that group are out of work.
+        </p>
+        <div id="pyramid"></div>
+        <p class="takeaway">
+          <b>What it shows:</b> The pyramid is widest at the bottom. About 137,000 men and 117,000 women aged
+          15&ndash;24 are unemployed, which is more than a third of all unemployed people. Between 35 and 54, women
+          outnumber men.
+        </p>
+      </section>
+
+      <footer class="sources">
+        <p><b>Data sources:</b> Australian Bureau of Statistics, <i>Labour Force, Australia</i> (modelled SA4 estimates
+        and detailed age, gender and state tables), data to July 2026. Region boundaries: ABS SA4 boundaries (2011),
+        from a public GitHub repository. Unemployment rate = unemployed &divide; (employed + unemployed).</p>
+      </footer>
+
+
+
+
+    </main>
+
+   
     <script type="text/javascript">
       vegaEmbed("#choropleth_map", "js/01_choropleth_sa4.vg.json").catch(console.error);
       vegaEmbed("#small_multiples_map", "js/02_small_multiples_map.vg.json").catch(console.error);
       vegaEmbed("#tile_grid_map", "js/03_tile_grid_map.vg.json").catch(console.error);
+      vegaEmbed("#heatmap_age", "js/05_heatmap_age.vg.json");
+      vegaEmbed("#pyramid", "js/06_pyramid.vg.json");
       var closeups = [
         {id: "#closeup_qld", title: "Queensland", states: ["Queensland"], scale: 482, translate: [7.4, -67.6]},
         {id: "#closeup_nsw", title: "NSW and ACT", states: ["New South Wales", "Australian Capital Territory"], scale: 652.4, translate: [-57.7, -283.4]},
@@ -85,8 +185,6 @@
           vegaEmbed(c.id, spec, {actions: false});
         });
       });
-      vegaEmbed("#heatmap_age", "js/05_heatmap_age.vg.json");
-      vegaEmbed("#pyramid", "js/06_pyramid.vg.json");
     </script>
   </body>
 </html>
