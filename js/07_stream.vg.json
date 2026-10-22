@@ -2,7 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": {
         "text": "How has the make-up of the unemployed changed?",
-        "subtitle": "People unemployed by age groups each month, January 2016 to July 2026. The wider the band, the more people.",
+        "subtitle": "People unemployed by age group each month, January 2016 to July 2026. The wider the band, the more people.",
         "anchor": "start",
         "fontSize": 20,
         "subtitleFontSize": 13
@@ -51,7 +51,7 @@
             "encoding": {"x": {"field": "date", "type": "temporal"}}
         },
         {
-            "data": {"values": [{"date": "2020-04-01", "label": "COVID-19 (apr 2020)"}]},
+            "data": {"values": [{"date": "2020-04-01", "label": "COVID-19 (Apr 2020)"}]},
             "mark": {"type": "text", "align": "left", "dx": 4, "dy": -6, "baseline": "bottom", "fontSize": 12, "fontWeight": "bold", "color": "#333333"},
             "encoding": {
                 "x": {"field": "date", "type": "temporal"},
