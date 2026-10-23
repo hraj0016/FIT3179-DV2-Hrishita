@@ -79,8 +79,13 @@
             }
         },
         {
-            "transform": [{"filter": "datum.year == 2026"}],
+            "transform": [{"filter": "datum.year == 2016"}],
             "mark": {"type": "text", "align": "right", "dx": -16, "fontSize": 12},
+            "encoding": {"text": {"field": "name"}}
+        },
+        {
+            "transform": [{"filter": "datum.year == 2026"}],
+            "mark": {"type": "text", "align": "left", "dx": 16, "fontSize": 12},
             "encoding": {"text": {"field": "name"}}
         }
     ],
