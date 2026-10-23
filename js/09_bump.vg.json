@@ -1,0 +1,88 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "Who has been best and worst at keeping people in work?",
+        "subtitle": "Rank of each state and territory by unemployment rate, July of each year. Rank 1 = lowest unemployment. Hover over a line to follow one state.",
+        "anchor": "start",
+        "fontSize": 20, 
+        "subtitleFontSize": 13
+    },
+    "width": 680,
+    "height": 440,
+    "data": {
+        "url": "https://raw.githubusercontent.com/hraj0016/fit3179-dv2-hrishita/main/data/state_sex_time.csv",
+        "format": {"type": "csv", "parse": {"value": "number", "year": "number", "month": "number"}}
+    },
+    "transform": [
+        {"filter": "datum.metric == 'Unemployment rate' && datum.sex == 'Persons' && datum.month == 7 && datum.state != 'Australia'"},
+        {"calculate": "datum.state == 'Australian Capital Territory' ? 'ACT' : datum.state", "as": "name"},
+        {
+            "window": [{"op": "row_number", "as": "rank"}],
+            "sort": [{"field": "value", "order": "ascending"}, {"field": "name", "order": "ascending"}],
+            "groupby": ["year"]
+        }
+    ],
+    "encoding": {
+        "x": {
+            "field": "year",
+            "type": "quantitative",
+            "title": null,
+            "scale": {"domain": [2012.5, 2029.5]},
+            "axis": {"values": [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026], "format": "d", "labelFontSize": 12, "grid": false, "ticks": false, "domain": false, "orient": "top"}
+        },
+        "y": {
+            "field": "rank",
+            "type": "quantitative",
+            "title": null,
+            "scale": {"domain": [0.5, 8.5], "reverse": true},
+            "axis": null
+        },
+        "color": {
+            "field": "name",
+            "type": "nominal",
+            "legend": null,
+            "scale": {
+                "domain": ["ACT", "New South Wales", "Northern Territory", "Queensland", "South Australia", "Tasmania", "Victoria", "Western Australia"],
+                "range": ["#1b9e77", "#d95f02", "#7570b3", "#e7298a", "#66a61e", "#a6761d", "#b8860b", "#1f78b4"]
+            }
+        }
+    },
+    "layer": [
+        {
+            "params": [
+                {"name": "hover", "select": {"type": "point", "fields": ["name"], "on": "mouseover", "clear": "mouseout"}}
+            ],
+            "mark": {"type": "line", "strokeWidth": 3, "interpolate": "monotone"},
+            "encoding": {
+                "detail": {"field": "name", "type": "nominal"},
+                "opacity": {"condition": {"param": "hover", "value": 1}, "value": 0.25}
+            }
+        },
+        {
+            "mark": {"type": "circle", "size": 330},
+            "encoding": {
+                "opacity": {"condition": {"param": "hover", "value": 1}, "value": 0.25},
+                "tooltip": [
+                    {"field": "name", "title": "State"},
+                    {"field": "year", "title": "Year (July)", "format": "d"},
+                    {"field": "rank", "title": "Rank (1 = lowest unemployment)"},
+                    {"field": "value", "title": "Unemployement rate (%)", "format": ".1f"}
+                ]
+            }
+        },
+        {
+            "mark": {"type": "text", "fontSize": 11, "fontWeight": "bold"},
+            "encoding": {
+                "text": {"field": "rank", "type": "quantitative"},
+                "opacity": {"value": 1},
+                "color": {"value": "#ffffff"}
+            }
+        },
+        {
+            "transform": [{"filter": "datum.year == 2026"}],
+            "mark": {"type": "text", "align": "right", "dx": -16, "fontSize": 12},
+            "encoding": {"text": {"field": "name"}}
+        }
+    ],
+    "config": {"view": {"stroke": null}}
+}

@@ -181,6 +181,23 @@
         </p>
       </section>
 
+      <section class="story">
+        <p class="step">9 &middot; Ranking</p>
+        <h2>Who has been best and worst at keeping people in work?</h2>
+        <p class="lead">
+          This chart ranks the eight states and territories from 1 (lowest unemployment rate) to 8 (highest) for
+          every July from 2016 to 2026. Each coloured line follows one state, and the number inside each dot is its
+          rank that year. Hover over a dot to follow that state and see its exact unemployment rate.
+        </p>
+        <div id="bump_chart"></div>
+        <p class="takeaway">
+          <b>What it shows:</b> The rankings change a lot from year to year. Western Australia went from last in
+          2016 to first in 2024, and South Australia climbed from 7th to 2nd. Victoria was first in 2022 but has been
+          last since 2024. Tasmania was first in 2025 and then dropped to 7th, and the ACT has finished first in
+          six of the last ten years.
+        </p>
+      </section>
+
       <footer class="sources">
         <p><b>Data sources:</b> Australian Bureau of Statistics, <i>Labour Force, Australia</i> (modelled SA4 estimates
         and detailed age, gender and state tables), data to July 2026. Region boundaries: ABS SA4 boundaries (2011),
@@ -201,6 +218,7 @@
       vegaEmbed("#pyramid", "js/06_pyramid.vg.json");
       vegaEmbed("#stream_graph", "js/07_stream.vg.json");
       vegaEmbed("#slope_chart", "js/08_slope.vg.json");
+      vegaEmbed("#bump_chart", "js/09_bump.vg.json");
       var closeups = [
         {id: "#closeup_qld", title: "Queensland", states: ["Queensland"], scale: 482, translate: [7.4, -67.6]},
         {id: "#closeup_nsw", title: "NSW and ACT", states: ["New South Wales", "Australian Capital Territory"], scale: 652.4, translate: [-57.7, -283.4]},
