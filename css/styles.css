@@ -120,7 +120,8 @@ body {
 #pyramid,
 #stream_graph,
 #slope_chart,
-#bump_chart { 
+#bump_chart,
+#dot_plot { 
     margin: 16px 0;
 }
 

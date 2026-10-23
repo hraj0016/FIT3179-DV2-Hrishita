@@ -198,6 +198,23 @@
         </p>
       </section>
 
+      <section class="story">
+        <p class="step">10 &middot; Young people</p>
+        <h2>Is youth uneployment a problem everywhere?</h2>
+        <p class="lead">
+          Each row is a state or territory. The blue dot is the unemployment rate for all ages and the red dot is
+          the rate for people aged 15&ndash;24. The grey bar between them is the gap, so a longer bar means young
+          people are doing much worse than everyone else. Rows are sorted from the highest youth rate to the lowest.
+        </p>
+        <div id="dot_plot"></div>
+        <p class="takeaway">
+          <b>What it shows:</b> Young people have a higher rate than the overall population in every state. In
+          Tasmania (13.9%) and Victoria (13.2%) the rate is roughly 2.5 times the overall rate, and the gaps there are
+          the widest, at about 8 to 9 percentage points. Even in New South Wales, the best state for young people at
+          8.5%, the youth rate is about twice the overall rate.
+        </p>
+      </section>
+
       <footer class="sources">
         <p><b>Data sources:</b> Australian Bureau of Statistics, <i>Labour Force, Australia</i> (modelled SA4 estimates
         and detailed age, gender and state tables), data to July 2026. Region boundaries: ABS SA4 boundaries (2011),
@@ -219,6 +236,7 @@
       vegaEmbed("#stream_graph", "js/07_stream.vg.json");
       vegaEmbed("#slope_chart", "js/08_slope.vg.json");
       vegaEmbed("#bump_chart", "js/09_bump.vg.json");
+      vegaEmbed("#dot_plot", "js/10_dot_plot.vg.json");
       var closeups = [
         {id: "#closeup_qld", title: "Queensland", states: ["Queensland"], scale: 482, translate: [7.4, -67.6]},
         {id: "#closeup_nsw", title: "NSW and ACT", states: ["New South Wales", "Australian Capital Territory"], scale: 652.4, translate: [-57.7, -283.4]},

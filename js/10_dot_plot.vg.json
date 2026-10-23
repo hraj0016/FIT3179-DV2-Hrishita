@@ -1,0 +1,78 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "Is youth unemployment a problem everywhere?",
+        "subtitle": "Unemployment rate for 15-24 years old compared with all ages, by state and territory, July 2026",
+        "anchor": "start",
+        "fontSize": 20,
+        "subtitleFontSize": 13
+    },
+    "width": 560,
+    "height": {"step": 38},
+    "data": {
+        "url": "https://raw.githubusercontent.com/hraj0016/fit3179-dv2-hrishita/main/data/youth_vs_all_2026.csv",
+        "format": {"type": "csv", "parse": {"all_ages_rate": "number", "youth_rate": "number", "gap": "number"}}
+    },
+    "transform": [
+        {"calculate": "datum.state == 'Australian Capital Territory' ? 'ACT' : datum.state", "as": "name"}
+    ],
+    "encoding": {
+        "y": {
+            "field": "name",
+            "type": "nominal",
+            "title": null,
+            "sort": {"field": "youth_rate", "order": "descending"},
+            "axis": {"labelFontSize": 12, "domain": false, "ticks": false, "grid": true, "gridColor": "#eeeeee"}
+        }
+    },
+    "layer": [
+        {
+            "mark": {"type": "rule", "strokeWidth": 4, "color": "#cccccc"},
+            "encoding": {
+                "x": {"field": "all_ages_rate", "type": "quantitative"},
+                "x2": {"field": "youth_rate"}
+            }
+        },
+        {
+            "transform": [{"fold": ["all_ages_rate", "youth_rate"], "as": ["measure", "rate"]}],
+            "mark": {"type": "circle", "size": 170, "opacity": 1},
+            "encoding": {
+                "x": {
+                    "field": "rate",
+                    "type": "quantitative",
+                    "title": "Unemployment rate (%)",
+                    "scale": {"domain": [0, 15]},
+                    "axis": {"labelFontSize": 12, "titleFontSize": 12, "grid": false}
+                },
+                "color": {
+                    "field": "measure",
+                    "type": "nominal",
+                    "title": null,
+                    "scale": {"domain": ["all_ages_rate", "youth_rate"], "range": ["#3182bd", "#bd0026"]},
+                    "legend": {"orient": "top", "direction": "horizontal", "labelFontSize": 12, "symbolType": "circle", "labelExpr": "datum.value == 'youth_rate' ? 'People aged 15-24' : 'All ages'"}
+                },
+                "tooltip": [
+                    {"field": "state", "title": "State"},
+                    {"field": "youth_rate", "title": "Aged 15-24 (%)", "format": ".1f"},
+                    {"field": "all_ages_rate", "title": "All ages (%)", "format": ".1f"},
+                    {"field": "gap", "title": "Gap (points)", "format": ".1f"}
+                ]
+            }
+        },
+        {
+            "mark": {"type": "text", "align": "left", "dx": 11, "fontSize": 12, "color": "#bd0026", "fontWeight": "bold"},
+            "encoding": {
+                "x": {"field": "youth_rate", "type": "quantitative"},
+                "text": {"field": "youth_rate", "type": "quantitative", "format": ".1f"}
+            }
+        },
+        {
+            "mark": {"type": "text", "align": "right", "dx": -11, "fontSize": 12, "color": "#3182bd", "fontWeight": "bold"},
+            "encoding": {
+                "x": {"field": "all_ages_rate", "type": "quantitative"},
+                "text": {"field": "all_ages_rate", "type": "quantitative", "format": ".1f"}
+            }
+        }
+    ],
+    "config": {"view": {"stroke": null}}
+}
